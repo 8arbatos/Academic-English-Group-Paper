@@ -4,6 +4,12 @@
 \setmainfont{Times New Roman}
 
 \usepackage{cite}
+\usepackage[
+    colorlinks=true, 
+    linkcolor=blue, 
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -18,40 +24,45 @@
 
 \author{
     \IEEEauthorblockN{
-        1\textsuperscript{st} Yuwei ZHAO, 
-        2\textsuperscript{nd} Kaiyuan ZHANG, 
-        3\textsuperscript{rd} Yuxiang LIU, \\
-        4\textsuperscript{th} Yilin ZHANG,
-        5\textsuperscript{th} Keqin ZHANG
+        Yuwei ZHAO\textsuperscript{1},
+        Kaiyuan ZHANG\textsuperscript{2},
+        Yuxiang LIU\textsuperscript{3}, \\
+        Yilin ZHANG\textsuperscript{4},
+        Keqin ZHANG\textsuperscript{5}
     }
 
     \\ [0.1pt]
 
-    \IEEEauthorblockA{\textit{Faculty of Computer Science and Engineering} \\
-    \textit{Ocean University of China}\\
-    Qingdao, China}
+    \IEEEauthorblockA{
+        Faculty of Computer Science and Engineering \\
+        Ocean University of China
+    }
 
     \\ [0.1pt]
     
     \IEEEauthorblockA{
-        \IEEEauthorrefmark{1} stanley\_zhao0113@outlook.com,
-        \IEEEauthorrefmark{2} 2289454579@qq.com,
-        \IEEEauthorrefmark{3} Adamn.liu@outlook.com, \\
-        \IEEEauthorrefmark{4} zyl8820@stu.ouc.edu.cn,
-        \IEEEauthorrefmark{5} 2038239354@qq.com
+        \IEEEauthorrefmark{1}stanley\_zhao0113@outlook.com,
+        \IEEEauthorrefmark{2}2289454579@qq.com,
+        \IEEEauthorrefmark{3}Adamn.liu@outlook.com, \\
+        \IEEEauthorrefmark{4}zyl8820@stu.ouc.edu.cn,
+        \IEEEauthorrefmark{5}2038239354@qq.com
     }
 }
 
 \maketitle
 
 \begin{abstract}
-    This document is a model and instructions for \LaTeX.
-    This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-    or Math in Paper Title or Abstract.
+    In the field of video-based 3D reconstruction, significant progress has been made achieved based on using techniques such as Neural Radiance Fields (NeRF) \cite{nerf_arxiv} of Gaussian Splatting \cite{gaussian_arxiv}.
+    NeRF is well-known for its high-quality render, implicit representation, and flexible extensibility, whereas Gaussian excels in real-time rendering and fast training.
+    Despite these advantages, there still exists many areas worth optimizing.
+    For instance, traditional NeRF suffers from low rendering efficiency, often requiring seconds to tens of seconds per frame due to computationally intensive volume sampling, while Gaussian Splatting struggles to capture fine details and microtextures, particularly in the presence of complex reflections or translucent materials.
+    Other methods, including NSFF, TensoRF, and COLMAP, also present their own trade-offs.
+    To provide a comprehensive evaluation of different video-based 3D reconstruction techniques across diverse scenarios, we \textit{Group\#2} conducted an exhaustive survey to systematically analyze the strengths and weaknesses of existing approaches.
+    The corresponding contributions are avaiable at \href{https://github.com/8arbatos/Academic-English-Group-Paper}{git@github.com:8arbatos/Academic-English-Group-Paper.git}
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert.
+    Deep learning, video-based, 3D reconstruction.
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -232,17 +243,13 @@ G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor
 acknowledgments in the unnumbered footnote on the first page.
 
 \begin{thebibliography}{99}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\bibitem{b8} D. P. Kingma and M. Welling, ``Auto-encoding variational Bayes,'' 2013, arXiv:1312.6114. [Online]. Available: https://arxiv.org/abs/1312.6114
-\bibitem{b9} S. Liu, ``Wi-Fi Energy Detection Testbed (12MTC),'' 2023, gitHub repository. [Online]. Available: https://github.com/liustone99/Wi-Fi-Energy-Detection-Testbed-12MTC
-\bibitem{b10} ``Treatment episode data set: discharges (TEDS-D): concatenated, 2006 to 2009.'' U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies, August, 2013, DOI:10.3886/ICPSR30122.v2
-\bibitem{b11} K. Eves and J. Valasek, ``Adaptive control for singularly perturbed systems examples,'' Code Ocean, Aug. 2023. [Online]. Available: https://codeocean.com/capsule/4989235/tree
+    \bibitem{nerf_arxiv} B. Mildenhall, P. P. Srinivasan, M. Tancik, J. T. Barron, R. Ramamoorthi, and R. Ng, 
+    "NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis," arXiv preprint arXiv:2003.08934, 2020.
+    [Online]. Available: \url{https://arxiv.org/abs/2003.08934}
+
+    \bibitem{gaussian_arxiv} J. Kerbl, A. Wang, F. Rousselle, and V. Koltun, 
+    "3D Gaussian Splatting for Real-Time Radiance Field Rendering," arXiv preprint arXiv:2304.08914, 2023.
+    [Online]. Available: \url{https://arxiv.org/abs/2308.04079}
 \end{thebibliography}
 
 \end{document}
