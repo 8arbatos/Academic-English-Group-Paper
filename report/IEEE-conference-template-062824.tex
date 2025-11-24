@@ -15,20 +15,26 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\def\BibTeX{
+    {\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}
+}
+
+\usepackage{cuted}
+\usepackage{caption}
+\usepackage{float}
 
 \begin{document}
 
-\title{Dynamic Scene Modeling and Rendering: \\ A Survey of Methods and Applications}
+\title{Dynamic Scene Modeling and Rendering: A Survey of Methods and Applications}
 
 \author{
     \IEEEauthorblockN{
-        Yuwei ZHAO\textsuperscript{1},
-        Kaiyuan ZHANG\textsuperscript{2},
-        Yuxiang LIU\textsuperscript{3}, \\
-        Yilin ZHANG\textsuperscript{4},
-        Keqin ZHANG\textsuperscript{5}
+        Yuwei ZHAO\IEEEauthorrefmark{1},
+        Kaiyuan ZHANG\IEEEauthorrefmark{2},
+        Yuxiang LIU\IEEEauthorrefmark{3},
+        Yilin ZHANG\IEEEauthorrefmark{3},
+        Keqin ZHANG\IEEEauthorrefmark{3}
     }
 
     \\ [0.1pt]
@@ -37,47 +43,59 @@
         Faculty of Computer Science and Engineering \\
         Ocean University of China
     }
-
-    \\ [0.1pt]
-    
-    \IEEEauthorblockA{
-        \IEEEauthorrefmark{1}stanley\_zhao0113@outlook.com,
-        \IEEEauthorrefmark{2}2289454579@qq.com,
-        \IEEEauthorrefmark{3}Adamn.liu@outlook.com, \\
-        \IEEEauthorrefmark{4}zyl8820@stu.ouc.edu.cn,
-        \IEEEauthorrefmark{5}2038239354@qq.com
-    }
 }
 
 \maketitle
 
+\begin{strip}
+    \centering
+    \includegraphics[width=0.9\textwidth]{./img/3d_reconstruction_evolution.png}
+    \captionof{figure}{Visualization of the evolution of video-based 3D reconstruction}
+    \label{fig:evolution_3d_reconstruction}
+\end{strip}
+
 \begin{abstract}
-    In the field of video-based 3D reconstruction, significant progress has been made achieved based on using techniques such as Neural Radiance Fields (NeRF) \cite{nerf_arxiv} of Gaussian Splatting \cite{gaussian_arxiv}.
-    NeRF is well-known for its high-quality render, implicit representation, and flexible extensibility, whereas Gaussian excels in real-time rendering and fast training.
-    Despite these advantages, there still exists many areas worth optimizing.
-    For instance, traditional NeRF suffers from low rendering efficiency, often requiring seconds to tens of seconds per frame due to computationally intensive volume sampling, while Gaussian Splatting struggles to capture fine details and microtextures, particularly in the presence of complex reflections or translucent materials.
-    Other methods, including NSFF, TensoRF, and COLMAP, also present their own trade-offs.
-    To provide a comprehensive evaluation of different video-based 3D reconstruction techniques across diverse scenarios, we \textit{Group\#2} conducted an exhaustive survey to systematically analyze the strengths and weaknesses of existing approaches.
-    The corresponding contributions are avaiable at \href{https://github.com/8arbatos/Academic-English-Group-Paper}{git@github.com:8arbatos/Academic-English-Group-Paper.git}
+    Dynamic scene modeling and reconstruction from video streams have witnessed a paradigm shift with the advent of Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS). 
+    While NeRF-based methods offer photorealistic quality via implicit neural representations, they often suffer from prohibitive training and rendering costs. 
+    Recently, 3DGS has emerged as a powerful alternative, enabling real-time rendering through explicit splatting techniques, though it introduces new challenges regarding storage overhead and temporal consistency. 
+    In this paper, we present a comprehensive survey of video-based 3D reconstruction methods, categorizing them into implicit and explicit approaches. 
+    We systematically evaluate their trade-offs in terms of rendering quality, speed, and memory consumption across diverse scenarios. 
+    Furthermore, we summarize the limitations of current state-of-the-art methods and discuss future directions. 
+    Our compiled resources and code are available at \url{https://github.com/8arbatos/Academic-English-Group-Paper}.
 \end{abstract}
 
 \begin{IEEEkeywords}
-    Deep learning, video-based, 3D reconstruction.
+    3D Reconstruction, Dynamic Scene Modeling, Neural Radiance Fields (NeRF), Gaussian Splatting, Novel View Synthesis, Survey.
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. For more information about how to become an IEEE Conference author or how to write your paper, please visit   IEEE Conference Author Center website: https://conferences.ieeeauthorcenter.ieee.org/.
 
-\subsection{Maintaining the Integrity of the Specifications}
+\IEEEPARstart{W}{ith} the rapid advancement of virtual reality (VR), augmented reality (AR), and the Metaverse, the demand for photorealistic 3D content creation has surged exponentially. 
+Dynamic scene modeling, which aims to reconstruct 3D geometry and appearance from 2D video streams, serves as a fundamental technology for these applications, enabling immersive telepresence, free-viewpoint video, and digital human avatars \cite{intro_metaverse}. 
+Unlike static scene reconstruction, modeling dynamic scenes from video presents a highly ill-posed inverse problem due to the entanglement of object motion, topology changes, and time-variant lighting conditions.
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+Traditionally, 3D reconstruction relied on Structure-from-Motion (SfM) and Multi-View Stereo (MVS) algorithms \cite{colmap}. 
+While these methods, such as COLMAP, provide robust camera pose estimation, they struggle to capture thin structures and view-dependent effects (e.g., reflections). 
+More importantly, traditional pipelines typically assume a static world, making them brittle when applied to dynamic video sequences where geometry consistency is violated over time.
+
+The field witnessed a paradigm shift with the introduction of \textbf{Neural Radiance Fields (NeRF)} \cite{nerf}. 
+By representing scenes as implicit continuous functions parameterized by Multi-Layer Perceptrons (MLPs), NeRF achieved unprecedented rendering quality. 
+Subsequent works, such as D-NeRF \cite{dnerf} and Nerfies \cite{nerfies}, extended this implicit paradigm to dynamic domains by introducing deformation fields to handle non-rigid motion. 
+However, implicit methods suffer from prohibitive computational costs due to the extensive ray-marching sampling required during both training and inference, limiting their deployment in real-time applications.
+
+Recently, \textbf{3D Gaussian Splatting (3DGS)} \cite{gaussian_splatting} has emerged as a compelling alternative, marking a return to explicit volumetric representations. 
+By combining the differentiability of deep learning with the efficiency of rasterization-based rendering, 3DGS enables real-time rendering (100+ FPS) and fast training speeds. 
+This breakthrough has triggered a new wave of research focused on extending Gaussian primitives to 4D spatiotemporal modeling \cite{4dgs, dynamic3dgs}, aiming to combine the efficiency of explicit representations with the flexibility of neural fields.
+
+Despite the explosion of research papers in this domain, a systematic comparison between implicit (NeRF-based) and explicit (Gaussian-based) approaches for video modeling is lacking. 
+In this survey, we provide a comprehensive review of the state-of-the-art methods for video-based 3D reconstruction. 
+The main contributions of this paper are summarized as follows:
+
+\begin{itemize}
+    \item We propose a structured taxonomy of dynamic scene modeling methods, categorizing them into \textit{Deformation-based}, \textit{Spacetime-based}, and \textit{Hybrid} approaches across both implicit and explicit representations.
+    \item We provide an in-depth analysis of the transition from NeRF to 3D Gaussian Splatting, highlighting the trade-offs between rendering quality, training efficiency, and storage overhead.
+    \item We conduct a comparative evaluation of representative frameworks and discuss open challenges, including storage optimization and long-duration video modeling, to guide future research directions.
+\end{itemize}
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
@@ -243,13 +261,36 @@ G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor
 acknowledgments in the unnumbered footnote on the first page.
 
 \begin{thebibliography}{99}
-    \bibitem{nerf_arxiv} B. Mildenhall, P. P. Srinivasan, M. Tancik, J. T. Barron, R. Ramamoorthi, and R. Ng, 
+    \bibitem{intro_metaverse} Apple Inc.
+    "EXPRESSION ESTIMATION FOR HEADSETS USING LOW-PROFILE ANTENNA AND IMPEDANCE CHARACTERISTIC SENSING"
+
+    \bibitem{colmap} Johannes Schönberger, Jan-Michael Frahm, Marc Pollefeys, Paul-Edouard Sarlin, and Shaohui Liu,
+    "COLMAP"
+    [Online]. Available: \url{https://colmap.github.io/index.html}.
+
+    \bibitem{nerf} B. Mildenhall, P. P. Srinivasan, M. Tancik, J. T. Barron, R. Ramamoorthi, and R. Ng, 
     "NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis," arXiv preprint arXiv:2003.08934, 2020.
     [Online]. Available: \url{https://arxiv.org/abs/2003.08934}
 
-    \bibitem{gaussian_arxiv} J. Kerbl, A. Wang, F. Rousselle, and V. Koltun, 
-    "3D Gaussian Splatting for Real-Time Radiance Field Rendering," arXiv preprint arXiv:2304.08914, 2023.
+    \bibitem{dnerf} Albert Pumarola, Enric Corona, Gerard Pons-Moll, and Francesc Moreno-Noguer,
+    "D-NeRF: Neural Radiance Fields for Dynamic Scenes", arXiv preprint arXiv:2011.13961, 2020.
+    [Online]. Available: \url{https://arxiv.org/abs/2011.13961}
+
+    \bibitem{nerfies} Keunhong Park, Utkarsh Sinha, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Steven M. Seitz, and Ricardo Martin-Brualla,
+    "Nerfies: Deformable Neural Radiance Fields", arXiv preprint arXiv:2011.12948, 2021.
+    [Online]. Available: \url{https://arxiv.org/abs/2011.12948}
+
+    \bibitem{gaussian_splatting} J. Kerbl, A. Wang, F. Rousselle, and V. Koltun, 
+    "3D Gaussian Splatting for Real-Time Radiance Field Rendering", arXiv preprint arXiv:2304.08914, 2023.
     [Online]. Available: \url{https://arxiv.org/abs/2308.04079}
+
+    \bibitem{4dgs} Guanjun Wu, Taoran Yi, Jiemin Fang, Lingxi Xie, Xiaopeng Zhang, Wei Wei, Wenyu Liu, Qi Tian, and Xinggang Wang,
+    "4D Gaussian Splatting for Real-Time Dynamic Scene Rendering", arXiv preprint arXiv:2310.08528, 2024.
+    [Online]. Available: \url{https://arxiv.org/abs/2310.08528}
+
+    \bibitem{dynamic3dgs} Jonathon Luiten, Georgios Kopanas, Bastian Leibe, and Deva Ramanan,
+    "Dynamic 3D Gaussians: Tracking by Persistent Dynamic View Synthesis", arXiv preprint arXiv:2308.09713, 2023.
+    [Online]. Available: \url{https://arxiv.org/abs/2308.09713}
 \end{thebibliography}
 
 \end{document}
