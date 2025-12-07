@@ -194,8 +194,18 @@ This tile-based rasterization approach allows for highly efficient backpropagati
 
 %----------------------------------------------------------------------------------------
 \section{Taxonomy of Dynamic Scene Modeling} % Core
+
+%----------------------------------------------------------------------------------------
 \subsection{Implicit Deformation Fields}
 This category of methods addresses dynamic scene modeling by decoupling the scene's geometry into two components: a static structure and a time-variant deformation.
+
+%----------------------------------------------------------------------------------------
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{./img/implicit_deformation_fields.png}
+  \caption{Overview of Implicit Deformation Fields. Dynamic scenes are modeled by learning a deformation field that maps points from the observation space to a canonical space, where a static NeRF represents the scene's appearance and geometry.}
+  \label{fig:implicit_deformation_fields}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 \subsubsection{Core Assumption and Architecture}
@@ -227,7 +237,7 @@ D-NeRF optimizes the scene using a sparse set of monocular images, successfully 
 
 \textbf{Nerfies:} While D-NeRF works well for synthetic or controlled data, applying this concept to casual selfie videos introduces challenges such as camera movement and under-constrained deformations. 
 Park et al.  introduced \textit{Nerfies}, which replaces the explicit time input $t$ with learned latent deformation codes $\omega_i$ to handle irregular timestamps. 
-Crucially, Nerfies introduces \textbf{elastic regularization} (based on the Jacobian of the deformation field) to impose rigidity priors. This prevents the "background" or "rigid parts" of a face from distorting unrealistically, ensuring that the deformation field remains plausible even with sparse views \cite{nerfies}.
+Crucially, Nerfies introduces \textbf{elastic regularization} (based on the Jacobian of the deformation field) to impose rigidity priors. This prevents the ``background'' or ``rigid parts'' of a face from distorting unrealistically, ensuring that the deformation field remains plausible even with sparse views \cite{nerfies}.
 
 \textbf{HyperNeRF:} A critical limitation of pure deformation fields is their continuity; they cannot model \textbf{topological changes} (e.g., a mouth opening/closing or separating objects) because mapping a continuous space to a discontinuous one requires a break in the vector field \cite{hypernerf}. 
 Park et al.  proposed \textit{HyperNeRF} to address this by lifting the scene into a higher-dimensional ``hyperspace''. Instead of simply deforming points, HyperNeRF learns a \textbf{slicing surface} in this ambient hyperspace. 
@@ -279,16 +289,95 @@ To prevent the ``motion-appearance ambiguity'' (where geometry changes are incor
 \subsubsection{Summary}
 \begin{itemize}
   \item \textbf{Pros:} These methods are well-suited for large-scale scenes and complex dynamics involving drastic topological changes (e.g., fluid dynamics, fire) where defining a canonical template is infeasible.
-  \item \textbf{Cons:} The addition of the time dimension significantly expands the sampling space, leading to the "curse of dimensionality." Without sufficient data (e.g., multi-view rigs) or strong regularization (e.g., depth/flow priors), these models are prone to overfitting or producing temporally incoherent artifacts.
+  \item \textbf{Cons:} The addition of the time dimension significantly expands the sampling space, leading to the ``curse of dimensionality''. Without sufficient data (e.g., multi-view rigs) or strong regularization (e.g., depth/flow priors), these models are prone to overfitting or producing temporally incoherent artifacts.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
 \subsection{Dynamic Gaussian Splatting}
-...
+This category represents the current state-of-the-art (SOTA), marking a shift from implicit neural fields back to explicit, rasterizable primitives. By extending 3D Gaussian Splatting (3DGS) to the temporal domain, these methods aim to combine the photorealism of NeRF with the real-time rendering capabilities of rasterization.
 
 %----------------------------------------------------------------------------------------
-\subsection{Hybrid Representations}
-...
+\subsubsection{Core Concepts and Architecture}
+The fundamental primitive in this paradigm is the \textbf{3D Gaussian}, characterized by a center position $\mu$, a covariance matrix $\Sigma$, an opacity $\alpha$, and spherical harmonics (SH) for color. To ensure physical validity, the covariance is factorized into scaling $S$ and rotation $R$ matrices: $\Sigma = R S S^T R^T$.
+
+To handle dynamic scenes without incurring the prohibitive memory cost of storing per-frame Gaussians, the core strategy is \textbf{Temporal Parameterization}. The attributes of Gaussians are modeled as functions of time $t$. The influence of a dynamic Gaussian at time $t$ is formulated as:
+\begin{equation}
+    G(\mathbf{x}, t) = \exp \left( -\frac{1}{2} (\mathbf{x} - \mu(t))^T \Sigma(t)^{-1} (\mathbf{x} - \mu(t)) \right)
+\end{equation}
+where $\mu(t)$ and $\Sigma(t)$ denote time-variant position and covariance. Two primary streams exist to model these functions:
+
+\textbf{Deformation-based Approach:} Similar to D-NeRF, this stream maintains a set of static \textit{Canonical Gaussians}. A learnable deformation network predicts offsets for position, rotation, and scaling ($\delta x, \delta r, \delta s$) to warp canonical primitives to the current timestamp.
+
+\textbf{4D Spacetime Primitives:} Alternatively, the scene can be represented holistically by querying a high-dimensional feature space. Techniques like \textbf{HexPlane decomposition} factorize the 4D spatiotemporal volume into multi-resolution 2D planes (e.g., $xy, xt, yt$) to efficiently encode temporal dynamics.
+
+%----------------------------------------------------------------------------------------
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\linewidth]{./img/dynamic_gs.png}
+  \caption{Overview of Dynamic Gaussian Splatting. Dynamic scenes are modeled by extending 3D Gaussians with temporal parameterization, either via deformation from a canonical set or direct 4D spatiotemporal representation.}
+  \label{fig:dynamic_gaussian_splatting}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Representative Frameworks}
+In the following, we discuss two representative frameworks that implement these strategies: \textbf{Deformable 3DGS} for the deformation-based stream and \textbf{4D-GS} for the spatiotemporal representation.
+
+\textbf{Deformable 3DGS:} Yang et al. proposed a framework that learns 3D Gaussians in a canonical space coupled with a deformation field. Unlike NeRF-based deformations that only modify positions, Deformable 3DGS explicitly predicts offsets for position, rotation, and scaling ($\delta x, \delta r, \delta s$) to ensure the ellipsoids align correctly with surface motion. It also introduces an ``annealing smooth training'' mechanism to mitigate temporal jitter caused by inaccurate poses in real-world datasets \cite{deformable_3dgs}.
+
+\textbf{4D-GS:} Wu et al. introduced a holistic representation combining 3D Gaussians with 4D neural voxels. To solve the memory bottleneck, they utilize a \textbf{HexPlane} structure to encode spatial-temporal features. A lightweight multi-head decoder then predicts the Gaussian deformations from these features. This design enables real-time rendering (e.g., 82 FPS at $800 \times 800$ resolution) while maintaining compact storage comparable to static methods \cite{4dgs}.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Summary}
+\begin{itemize}
+  \item \textbf{Pros:} These methods inherit the efficiency of the rasterization pipeline, achieving real-time rendering speeds ($>30$ FPS) and fast training convergence (often within minutes), which addresses the primary limitation of implicit NeRFs \cite{4dgs}.
+  \item \textbf{Cons:} They can be memory-intensive (high VRAM usage) when the number of primitives grows large. Furthermore, modeling large, complex motions from monocular video remains challenging, potentially leading to overfitting or artifacts in unseen views \cite{deformable_3dgs}.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+\subsection{Hybrid and Accelerated Representations}
+
+While implicit deformation fields offer high fidelity and spacetime neural fields handle complex topology, both suffer from slow training and inference speeds due to the heavy reliance on large MLPs. 
+Hybrid representations address this bottleneck by combining \textbf{explicit spatial data structures} (to store learnable features) with \textbf{lightweight implicit decoders} (to interpret them). 
+This paradigm serves as a crucial bridge between pure NeRFs and the fully explicit 3DGS.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Core Strategy: Spatial Acceleration}
+The core insight of this category is to replace the ``deep'' computation of a large MLP with a ``shallow'' lookup operation. 
+Instead of mapping a coordinate $\mathbf{x}$ directly to color/density via a deep network, hybrid methods first query a learnable feature vector $\mathbf{f}$ from a spatial structure (e.g., Voxel Grid, Octree, or Hash Table) and then pass this feature to a tiny MLP:
+\begin{equation}
+    \mathbf{f} = \text{Query}(\mathcal{S}, \mathbf{x}), \quad (\mathbf{c}, \sigma) = \text{MLP}_{\text{tiny}}(\mathbf{f})
+\end{equation}
+where $\mathcal{S}$ represents the explicit data structure. This design significantly reduces the floating-point operations (FLOPs) required per sample.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Representative Frameworks}
+In the following, we discuss four milestone frameworks that utilize distinct spatial data structures---ranging from hash grids and tensor decomposition to sparse voxels and point clouds---to achieve computational efficiency.
+
+\textbf{Instant-NGP:} Müller et al. revolutionized the field with \textit{Instant Neural Graphics Primitives}, which introduced \textbf{Multiresolution Hash Encoding}. 
+By mapping spatial coordinates to a set of learnable feature vectors stored in hash tables at multiple resolution levels, Instant-NGP reduces the training time of radiance fields from hours to seconds. 
+Although originally static, its hash encoding backbone has become the standard component for accelerating dynamic methods (including many Spacetime NeRFs and Dynamic 3DGS variants) \cite{instant_ngp}.
+
+\textbf{TensoRF \& K-Planes:} To handle the high memory footprint of dense voxel grids (which scale cubically $O(N^3)$), these methods employ \textbf{Tensor Decomposition}. 
+TensoRF factorizes the 3D scene tensor into vector-matrix outer products. 
+Extending this to dynamic scenes, \textbf{K-Planes} decomposes the 4D spatiotemporal volume into six planar planes (e.g., $xy, xt, yt$). 
+This decomposition allows for explicit modeling of time while maintaining a low memory footprint, effectively "unrolling" the complex dynamic scene into manageable 2D feature maps \cite{tensorf, kplanes}.
+
+\textbf{Plenoxels:} Taking the ``hybrid'' concept to its limit, Fridovich-Keil et al. proposed \textit{Plenoxels}, which eliminates the neural network entirely. 
+It optimizes a sparse voxel grid where each voxel stores spherical harmonics coefficients directly. 
+This work demonstrated that the photorealism of NeRF stems primarily from the differentiable volumetric rendering formulation rather than the neural network itself \cite{plenoxels}.
+
+\textbf{Point-NeRF:} While grid-based methods offer speed, they struggle with empty space inefficiency. 
+Xu et al. proposed \textit{Point-NeRF}, which combines accurate 3D point clouds (from MVS) with neural radiance fields. 
+Instead of querying a dense grid, Point-NeRF stores neural features on discrete points. 
+During ray-marching, features are aggregated from nearby points to predict radiance. 
+This approach effectively skips empty space and serves as a significant precursor to 3DGS, demonstrating the potential of point-based neural rendering \cite{point_nerf}.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Summary}
+\begin{itemize}
+  \item \textbf{Pros:} These methods offer a superior balance between speed and quality. Training is orders of magnitude faster than pure MLP-based NeRFs, and inference is often real-time or near real-time.
+  \item \textbf{Cons:} They typically consume more memory (VRAM) than compact pure-implicit models. Additionally, implementing efficient CUDA kernels for hash lookups or sparse grids is technically more complex than standard MLPs.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 \section{Datasets and Metrics}
@@ -396,6 +485,42 @@ To prevent the ``motion-appearance ambiguity'' (where geometry changes are incor
   ``Dynamic 3D Gaussians: Tracking by Persistent Dynamic View Synthesis,''
   {\it{arXiv preprint}}, arXiv:2308.09713, 2023.
   [Online]. Available: https://arxiv.org/abs/2308.09713
+
+  \bibitem{deformable_3dgs}
+  Ziyi Yang, Xinyu Gao, Wen Zhou, Shaohui Jiao, Yuqing Zhang, and Xiaogang Jin,
+  ``Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction,''
+  {\it{arXiv preprint}}, arXiv:2309.13101, 2023.
+  [Online]. Available: https://arxiv.org/abs/2309.13101
+
+  \bibitem{instant_ngp}
+  Thomas Müller, Alex Evans, Christoph Schied, and Alexander Keller,
+  ``Instant Neural Graphics Primitives with a Multiresolution Hash Encoding,''
+  {\it{arXiv preprint}}, arXiv:2201:05989, 2022.
+  [Online]. Available: https://arxiv.org/abs/2201.05989
+
+  \bibitem{point_nerf}
+  Qiangeng Xu, Zexiang Xu, Julien Philip, Sai Bi, Zhixin Shu, Kalyan Sunkavalli, and Ulrich Neumann,
+  ``Point-NeRF: Point-based Neural Radiance Fields,''
+  {\it{arXiv preprint}}, arXiv:2201.08845, 2022.
+  [Online]. Available: https://arxiv.org/abs/2201.08845
+
+  \bibitem{tensorf}
+  Anpei Chen, Zexiang Xu, Andreas Geiger, Jingyi Yu, and Hao Su,
+  ``TensoRF: Tensorial Radiance Fields,''
+  {\it{arXiv preprint}}, arXiv:2203.09517, 2022.
+  [Online]. Available: https://arxiv.org/abs/2203.09517
+
+  \bibitem{kplanes}
+  Sara Fridovich-Keil, Giacomo Meanti, Frederik Warburg, Benjamin Recht, and Angjoo Kanazawa,
+  ``Sara Fridovich-Keil, Giacomo Meanti, Frederik Warburg, Benjamin Recht, Angjoo Kanazawa.''
+  {\it{arXiv preprint}}, arXiv:2301.10241, 2023.
+  [Online]. Available: https://arxiv.org/abs/2301.10241
+
+  \bibitem{plenoxels}
+  Alex Yu, Sara Fridovich-Keil, Matthew Tancik, Qinhong Chen, Benjamin Recht, and Angjoo Kanazawa,
+  ``Plenoxels: Radiance Fields without Neural Networks,''
+  {\it{arXiv preprint}}, arXiv:2112.05131, 2021.
+  [Online]. Available: https://arxiv.org/abs/2112.05131
 \end{thebibliography}
 
 \newpage
