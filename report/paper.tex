@@ -14,12 +14,16 @@
 \usepackage{verbatim}
 \usepackage{graphicx}
 \usepackage{cite}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
 \hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
 \usepackage[
     colorlinks=true, 
-    linkcolor=blue, 
-    citecolor=blue,
-    urlcolor=blue
+    linkcolor=Blue, 
+    citecolor=Blue,
+    urlcolor=Blue
 ]{hyperref}
 
 %----------------------------------------------------------------------------------------
@@ -27,7 +31,7 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 
-\title{Dynamic Scene Modeling and Rendering: A Survey of Methods and Applications}
+\title{From NeRFs to 3D Gaussians: A Survey on Dynamic Scene Modeling and Rendering}
 
 \author{
   Yuwei~Zhao$^{1,2}$,
@@ -43,18 +47,16 @@
 
 %----------------------------------------------------------------------------------------
 \begin{abstract}
-  Dynamic scene modeling and reconstruction from video streams have witnessed a paradigm shift with the advent of Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS). 
-  While NeRF-based methods offer photorealistic quality via implicit neural representations, they often suffer from prohibitive training and rendering costs. 
-  Recently, 3DGS has emerged as a powerful alternative, enabling real-time rendering through explicit splatting techniques, though it introduces new challenges regarding storage overhead and temporal consistency. 
-  In this paper, we present a comprehensive survey of video-based 3D reconstruction methods, categorizing them into implicit and explicit approaches. 
-  We systematically evaluate their trade-offs in terms of rendering quality, speed, and memory consumption across diverse scenarios. 
-  Furthermore, we summarize the limitations of current state-of-the-art methods and discuss future directions. 
-  Our compiled resources and code are available at \url{https://github.com/8arbatos/Academic-English-Group-Paper}.
+  Dynamic scene modeling is a pivotal technology for emerging applications in the Metaverse, virtual reality, and free-viewpoint video. While Neural Radiance Fields (NeRF) have achieved photorealistic rendering, their application to dynamic scenes is hindered by slow training and inference speeds. Recently, 3D Gaussian Splatting (3DGS) has emerged as a disruptive alternative, offering real-time rendering capabilities through explicit splatting. 
+  In this survey, we provide a comprehensive review of the transition from implicit to explicit representations for dynamic scene modeling. We propose a structured taxonomy categorizing existing methods into four paradigms: Implicit Deformation Fields, Spacetime Neural Fields, Hybrid Representations, and Dynamic Gaussian Splatting. 
+  Furthermore, we conduct a systematic comparative analysis based on reconstruction quality, training efficiency, and storage footprint. Our analysis reveals that while implicit methods excel in storage efficiency ($<5$ MB), explicit Gaussian-based methods demonstrate superior real-time performance ($>80$ FPS). 
+  Finally, we discuss open challenges, including storage compression and integration with generative AI, outlining future directions for this rapidly evolving field.
+  Our compiled resources are available at \url{https://github.com/8arbatos/Academic-English-Group-Paper}.
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
 \begin{IEEEkeywords}
-  3D Reconstruction, Dynamic Scene Modeling, Neural Radiance Fields (NeRF), Gaussian Splatting, Novel View Synthesis, Survey.
+  Dynamic Scene Modeling, Neural Radiance Fields, 3D Gaussian Splatting, View Synthesis, 4D Reconstruction.
 \end{IEEEkeywords}
 
 %----------------------------------------------------------------------------------------
@@ -94,14 +96,15 @@ This breakthrough has triggered a new wave of research focused on extending Gaus
 \end{figure*}
 
 %----------------------------------------------------------------------------------------
-Despite the explosion of research papers in this domain, a systematic comparison between implicit (NeRF-based) and explicit (Gaussian-based) approaches for video modeling is lacking. 
-In this survey, we provide a comprehensive review of the state-of-the-art methods for video-based 3D reconstruction. 
-The main contributions of this paper are summarized as follows:
+Despite the explosion of research papers in this domain, a systematic comparison between the established implicit (NeRF-based) paradigms and the emerging explicit (Gaussian-based) approaches is lacking. 
+To fill this gap, this paper provides a structured survey of dynamic scene modeling. Our main contributions are summarized as follows:
 
 \begin{itemize}
-  \item We propose a structured taxonomy of dynamic scene modeling methods, categorizing them into \textit{Deformation-based}, \textit{Spacetime-based}, and \textit{Hybrid} approaches across both implicit and explicit representations.
-  \item We provide an in-depth analysis of the transition from NeRF to 3D Gaussian Splatting, highlighting the trade-offs between rendering quality, training efficiency, and storage overhead.
-  \item We conduct a comparative evaluation of representative frameworks and discuss open challenges, including storage optimization and long-duration video modeling, to guide future research directions.
+    \item \textbf{Structured Taxonomy:} We categorize dynamic modeling methods into four distinct streams: Implicit Deformation Fields (e.g., D-NeRF), Spacetime Neural Fields (e.g., DyNeRF), Hybrid Representations (e.g., HexPlane), and Dynamic Gaussian Splatting (e.g., 4D-GS). This classification clarifies the evolution from continuous functions to discrete primitives.
+    
+    \item \textbf{Comprehensive Comparison:} We provide an in-depth comparative analysis of these methods, evaluating them not just on visual quality (PSNR/SSIM), but critically on computational efficiency (Training Time, FPS) and storage costs. We highlight the trade-off between the compactness of implicit methods and the speed of explicit methods.
+    
+    \item \textbf{Future Insights:} We identify critical open challenges, such as the ``baked-in'' lighting limitation and the storage bottleneck of dynamic Gaussians, and propose future directions involving generative AI integration and inverse rendering.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -181,7 +184,7 @@ Unlike NeRF's ray-marching, 3DGS projects the 3D Gaussians directly onto the 2D 
 \begin{equation}
   \Sigma' = J W \Sigma W^T J^T
 \end{equation}
-where $J$ is the Jacobian of the affine approximation of the projective transformation. This step effectively "splats" the 3D ellipsoids into 2D ellipses.
+where $J$ is the Jacobian of the affine approximation of the projective transformation. This step effectively ``splats'' the 3D ellipsoids into 2D ellipses.
 
 %----------------------------------------------------------------------------------------
 \subsubsection{Tile-based Blending}
@@ -360,7 +363,7 @@ Although originally static, its hash encoding backbone has become the standard c
 \textbf{TensoRF \& K-Planes:} To handle the high memory footprint of dense voxel grids (which scale cubically $O(N^3)$), these methods employ \textbf{Tensor Decomposition}. 
 TensoRF factorizes the 3D scene tensor into vector-matrix outer products. 
 Extending this to dynamic scenes, \textbf{K-Planes} decomposes the 4D spatiotemporal volume into six planar planes (e.g., $xy, xt, yt$). 
-This decomposition allows for explicit modeling of time while maintaining a low memory footprint, effectively "unrolling" the complex dynamic scene into manageable 2D feature maps \cite{tensorf, kplanes}.
+This decomposition allows for explicit modeling of time while maintaining a low memory footprint, effectively ``unrolling'' the complex dynamic scene into manageable 2D feature maps \cite{tensorf, kplanes}.
 
 \textbf{Plenoxels:} Taking the ``hybrid'' concept to its limit, Fridovich-Keil et al. proposed \textit{Plenoxels}, which eliminates the neural network entirely. 
 It optimizes a sparse voxel grid where each voxel stores spherical harmonics coefficients directly. 
@@ -381,37 +384,272 @@ This approach effectively skips empty space and serves as a significant precurso
 
 %----------------------------------------------------------------------------------------
 \section{Datasets and Metrics}
-\subsection{Common Datasets (N3V, D-NeRF, etc.)}
-...
 
-\subsection{Evaluation Metrics (PSNR, SSIM, LPIPS, FPS)}
-...
+%----------------------------------------------------------------------------------------
+\subsection{Common Datasets}
+To evaluate the performance of dynamic scene modeling algorithms, various datasets have been proposed, ranging from controlled synthetic environments to complex real-world captures. 
+We categorize the mainstream datasets into synthetic and real-world collections.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Synthetic Datasets}
+\textbf{D-NeRF Dataset} --- Pumarola et al. introduced this dataset as a standard benchmark for monocular dynamic view synthesis. 
+It consists of 8 synthetic scenes generated using physically-based rendering. The scenes exhibit diverse motion patterns, categorized into:
+\begin{itemize}
+    \item \textbf{Articulated Motion:} \textit{T-Rex, Lego, Tractor}.
+    \item \textbf{Non-rigid / Deformable Motion:} \textit{Hell Warrior, Mutant, Hook, Stand Up, Jumping Jacks}.
+    \item \textbf{Topological Changes:} \textit{Bouncing Balls}.
+\end{itemize}
+Since it provides perfect camera poses and ground truth depth, it serves as the primary testbed for validating deformation accuracy and rendering quality without the interference of pose errors errors\footnote{D-NeRF dataset available at: \url{https://www.albertpumarola.com/research/D-NeRF/index.html}}.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Real-world Datasets}
+\textbf{Neural 3D Video (N3V) Dataset} --- Proposed by Li et al. (DyNeRF), this dataset focuses on high-fidelity reconstruction from synchronized \textbf{multi-view} videos (typically 18-21 cameras). 
+Recorded at 2.7K resolution and 30 FPS, it features challenging indoor scenarios with complex illumination and volumetric effects. 
+Representative scenes include \textit{Flame Salmon} (fire/smoke), \textit{Coffee Martini} (liquid/reflections), \textit{Cook Spinach} (steam), and \textit{Cut Roasted Beef} (texture changes). 
+This dataset is widely used to evaluate methods targeting immersive video and photo-realistic rendering of complex materials\footnote{N3D dataset available at: \url{https://github.com/facebookresearch/Neural_3D_Video}}.
+
+\textbf{HyperNeRF Dataset} --- To address the limitation of deformation fields in handling topological changes, Park et al. collected this dataset using casually captured \textbf{monocular} videos. 
+It emphasizes ``topologically varying'' objects where standard deformation fields fail. 
+Key scenes include \textit{3D Printer} (appearing/disappearing materials), \textit{Broom} (bristles spreading), \textit{Chicken} (elastic deformation), and \textit{Peel Banana} (separation of geometry). 
+It also provides a ``Validation Rig'' subset for quantitative evaluation\footnote{HyperNeRF dataset available at: \url{https://hypernerf.github.io}}.
+
+\textbf{Technicolor Light Field Dataset} --- Originally designed for light field research, this dataset contains high-quality multi-view video sequences captured in a studio setting with a 4x4 camera rig. 
+Scenes such as \textit{Fabien}, \textit{Painter}, and \textit{Birthday} involve human performances and are frequently used to benchmark hybrid and explicit representations for free-viewpoint video\footnote{Technicolor dataset available at: \url{https://www.interdigital.com/data_sets/light-field-dataset}}.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}[H]
+  \centering
+  \begin{tabularx}{\linewidth}{l|c|c|X}
+    \hline
+    \textbf{Dataset} & \textbf{Type} & \textbf{Cameras} & \textbf{Key Challenges} \\
+    \hline
+    D-NeRF \cite{dnerf} & Synthetic & Monocular & Large deformations, Articulated motion \\
+    N3V (DyNeRF) \cite{dynerf} & Real & Multi-view & Fire, Smoke, Reflections, High-res \\
+    HyperNeRF \cite{hypernerf} & Real & Monocular & Topological changes, Casual capture \\
+    Technicolor & Real & Multi-view & Studio quality, Human performance \\
+    \hline
+  \end{tabularx}
+  \caption{Summary of Common Datasets for Dynamic Scene Modeling}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+\subsection{Evaluation Metrics}
+To quantitatively assess the performance of dynamic scene modeling methods, the community relies on a set of standard metrics covering reconstruction quality, perceptual fidelity, and computational efficiency.
+
+%----------------------------------------------------------------------------------------
+\begin{table*}[t]
+  \centering
+  \renewcommand{\arraystretch}{1.2}
+  \setlength{\tabcolsep}{6pt}
+  \begin{tabular}{l|l|c|ccc|cc|c}
+    \hline
+    \multirow{2}{*}{\textbf{Method}} & \multirow{2}{*}{\textbf{Class}} & \multirow{2}{*}{\textbf{Year}} & \multicolumn{3}{c|}{\textbf{Rendering Quality}} & \multicolumn{2}{c|}{\textbf{Efficiency}} & \textbf{Storage} \\
+    & & & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ & FPS $\uparrow$ & Train Time $\downarrow$ & Size (MB) \\
+    \hline
+    \multicolumn{9}{c}{\textit{Dataset: D-NeRF Synthetic (Monocular, $800 \times 800$)}} \\
+    \hline
+    D-NeRF \cite{dnerf} & \textcolor{BlueViolet}{Imp.} & 2021 & 30.31 & 0.96 & 0.039 & $<$ 1 & $\sim$ 2 days & \textbf{$<$ 5} \\
+    TiNeuVox \cite{tineuvox} & \textcolor{OliveGreen}{Hyb.} & 2022 & 32.67 & 0.97 & 0.040 & 1.5 & 28 min & 48 \\
+    HexPlane \cite{hexplane} & \textcolor{OliveGreen}{Hyb.} & 2023 & 31.04 & 0.97 & 0.040 & 2.5 & 11 min & 38 \\
+    K-Planes \cite{kplanes} & \textcolor{OliveGreen}{Hyb.} & 2023 & 31.61 & 0.97 & 0.038 & 0.9 & 52 min & 418 \\
+    \textbf{Deformable 3DGS} \cite{deformable_3dgs} & \textcolor{BrickRed}{Exp.} & 2024 & \underline{33.07} & \underline{0.98} & \textbf{0.018} & \underline{45} & \textbf{$<$ 10 min} & $\sim$ 20 \\
+    \textbf{4D-GS} \cite{4dgs} & \textcolor{BrickRed}{Exp.} & 2024 & \textbf{34.05} & \textbf{0.98} & \underline{0.020} & \textbf{82} & \underline{8 min} & \underline{18} \\
+    \hline
+    \multicolumn{9}{c}{\textit{Dataset: HyperNeRF / N3V (Real-world, various resolutions)}} \\
+    \hline
+    Nerfies \cite{nerfies} & \textcolor{BlueViolet}{Imp.} & 2021 & 22.20 & 0.80 & 0.193 & $<$ 1 & $\sim$ 16 hours & \textbf{$<$ 10} \\
+    HyperNeRF \cite{hypernerf} & \textcolor{BlueViolet}{Imp.} & 2021 & 22.40 & 0.81 & 0.185 & $<$ 1 & $\sim$ 32 hours & \textbf{$<$ 10} \\
+    DyNeRF \cite{dynerf} & \textcolor{BlueViolet}{Imp.} & 2022 & 29.58 & 0.92 & 0.098 & $<$ 1 & $\sim$ 1 week & 28 \\
+    HexPlane \cite{hexplane} & \textcolor{OliveGreen}{Hyb.} & 2023 & \underline{31.70} & \textbf{0.95} & 0.075 & 0.2 & 12 hours & 250 \\
+    \textbf{4D-GS} \cite{4dgs} & \textcolor{BrickRed}{Exp.} & 2024 & 31.15 & \underline{0.94} & \textbf{0.049} & \textbf{30} & \textbf{40 min} & 90 \\
+    \hline
+  \end{tabular}
+  \caption{\textbf{Quantitative Comparison of State-of-the-Art Methods.} We report average metrics across standard test sets. \textbf{Class} denotes the method category: \textcolor{BlueViolet}{Imp.} (Implicit), \textcolor{OliveGreen}{Hyb.} (Hybrid), and \textcolor{BrickRed}{Exp.} (Explicit). Best results are highlighted in \textbf{bold}, and second best are \underline{underlined}.}
+  \label{tab:quantitative_comparison}
+\end{table*}
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Reconstruction Quality Metrics}
+The quality of novel view synthesis is typically assessed using standard image quality assessment (IQA) metrics. 
+These metrics evaluate the pixel-level fidelity and perceptual similarity between the rendered images and ground truth references.
+
+\textbf{Peak Signal-to-Noise Ratio (PSNR):} PSNR is the most widely used metric for measuring pixel-level reconstruction accuracy. 
+It calculates the ratio between the maximum possible power of a signal and the power of corrupting noise, expressed in decibels (dB):
+\begin{equation}
+    \text{PSNR} = 10 \cdot \log_{10} \left( \frac{\text{MAX}_I^2}{\text{MSE}} \right)
+\end{equation}
+where $\text{MAX}_I$ is the maximum pixel value (e.g., 255) and MSE is the Mean Squared Error between the rendered and ground truth images. 
+While high PSNR indicates low pixel error, it often favors smooth/blurry results over sharp but slightly misaligned textures.
+
+\textbf{Structural Similarity Index (SSIM):} Unlike PSNR, SSIM measures the structural similarity between two images, 
+which correlates better with the human visual system's sensitivity to structural information. It considers luminance, contrast, and structure:
+\begin{equation}
+    \text{SSIM}(x, y) = \frac{(2\mu_x\mu_y + C_1)(2\sigma_{xy} + C_2)}{(\mu_x^2 + \mu_y^2 + C_1)(\sigma_x^2 + \sigma_y^2 + C_2)}
+\end{equation}
+where $\mu$ and $\sigma$ represent the mean and variance of image windows. SSIM values range from -1 to 1, with 1 indicating perfect similarity.
+
+\textbf{Learned Perceptual Image Patch Similarity (LPIPS):} Standard metrics (PSNR/SSIM) often fail to capture high-frequency details and perceptual quality. 
+LPIPS measures the distance between image patches in the deep feature space of a pre-trained network (e.g., VGG or AlexNet). 
+Lower LPIPS scores indicate better perceptual quality, aligning more closely with human judgment, especially for dynamic scenes where slight motion misalignments penalize PSNR heavily but look plausible to humans.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Efficiency Metrics}
+In addition to visual quality, the computational efficiency of a method determines its practicality for real-time applications (such as VR/AR) and its scalability for large datasets.
+
+\textbf{Frames Per Second (FPS):} This metric evaluates the inference/rendering speed. 
+For real-time applications (VR/AR), a method typically needs to achieve $\ge 30$ FPS. 
+Explicit methods like 3DGS often reach 100+ FPS, while implicit NeRFs may struggle at $<1$ FPS.
+
+\textbf{Training Time:} This measures the duration required to optimize the scene representation from scratch. 
+It is a critical factor for scalability. Recent Gaussian-based methods have reduced training time from days (D-NeRF) to minutes (4D-GS).
 
 %----------------------------------------------------------------------------------------
 \section{Comparative Analysis}
-\subsection{Quantitative Benchmarks} % 放表格
-...
+In this section, we provide a systematic comparison of the representative methods discussed in Section III. We evaluate them based on quantitative reconstruction quality, computational efficiency, and storage requirements.
 
-\subsection{Qualitative Visual Comparisons} % 放对比图
-...
+%----------------------------------------------------------------------------------------
+\subsection{Quantitative Benchmarks}
+Table \ref{tab:quantitative_comparison} summarizes the performance of Implicit (NeRF-based), Hybrid, and Explicit (Gaussian-based) frameworks across standard benchmarks. The comparison is divided into synthetic scenes (D-NeRF dataset) and complex real-world scenes (HyperNeRF and N3V datasets).
 
-\subsection{Efficiency Analysis (Time \& Memory)} % 讲速度和显存
-...
+%----------------------------------------------------------------------------------------
+\subsubsection{Quality vs. Efficiency Trade-off}
+The benchmarks reveal a clear paradigm shift. 
+Implicit methods (e.g., D-NeRF, HyperNeRF) produce high-fidelity results with extremely compact storage (typically $<10$ MB) due to the spectral bias of MLPs. However, their inference speed is prohibitively slow ($<1$ FPS) for interactive applications. 
+Hybrid methods (e.g., HexPlane, TiNeuVox) significantly reduce training time to minutes by utilizing explicit spatial structures, yet their rendering speed remains limited by the ray-marching/accumulation step.
+
+Explicit Gaussian-based methods (Deformable 3DGS, 4D-GS) break this bottleneck. 
+As shown in Table \ref{tab:quantitative_comparison}, \textbf{4D-GS} achieves real-time performance (82 FPS on synthetic data, 30 FPS on high-res real data) while matching or surpassing the PSNR/SSIM of offline implicit methods. 
+This efficiency gain comes from replacing costly volumetric sampling with rasterization. 
+However, this comes at the cost of increased storage requirements (often $2\times$ to $10\times$ larger than implicit models) to store millions of Gaussian primitives.
+
+%----------------------------------------------------------------------------------------
+\subsection{Qualitative Visual Comparisons}
+While quantitative metrics provide a numerical ranking, they often fail to capture perceptual artifacts such as ghosting, over-smoothing, or geometric distortion. 
+In Figure \ref{fig:qualitative_comparison}, we provide a visual comparison of representative methods across three challenging scenarios: topological changes, fine geometric structures, and rapid motion.
+
+%----------------------------------------------------------------------------------------
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.95\textwidth]{./img/qualitative_comparison_composite.png}
+    
+    \caption{\textbf{Qualitative comparison on challenging scenarios.} 
+    \textbf{Left:} Handling topological changes. Deformation fields (Nerfies) cause stretching artifacts, while HyperNeRF handles discontinuities correctly \cite{hypernerf}.
+    \textbf{Top Right:} Reconstructing fine details. Implicit methods (TiNeuVox) tend to smooth out thin structures, whereas explicit Deformable 3DGS preserves sharp geometry \cite{deformable_3dgs}.
+    \textbf{Bottom Right:} Handling rapid motion. Basic temporal conditioning leads to ghosting (NeRF-T), while latent-conditioned methods (DyNeRF) recover sharp dynamics \cite{dynerf}.}
+    \label{fig:qualitative_comparison}
+\end{figure*}
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Topological Adaptability}
+Implicit deformation fields (e.g., Nerfies) rely on continuous mapping functions, which inherently struggle with discontinuous motions. 
+As shown in the \textbf{left panel} of Figure \ref{fig:qualitative_comparison}, when representing a splitting object (e.g., opening a mouth or slicing dough), deformation-based methods tend to produce unnatural stretching artifacts. 
+In contrast, \textbf{HyperNeRF} successfully handles these topology changes by lifting the deformation into a higher-dimensional hyperspace, allowing for discontinuous slicing \cite{hypernerf}.
+
+\subsubsection{High-Frequency Details}
+Explicit representations generally exhibit superior capability in preserving high-frequency details compared to implicit or hybrid fields. 
+As illustrated in the \textbf{top right} of Figure \ref{fig:qualitative_comparison} (T-Rex scene), grid-based methods like TiNeuVox often result in over-smoothed geometry due to the limited resolution of the voxel grid or the spectral bias of MLPs. 
+\textbf{Deformable 3DGS}, leveraging discrete Gaussian primitives, maintains sharp edges and intricate structures (e.g., the ribs of the skeleton) without blurring \cite{deformable_3dgs}.
+
+\subsubsection{Motion Blur and Ghosting}
+Modeling rapid motion from monocular or sparse video remains a significant challenge. 
+Naive temporal extensions (e.g., NeRF-T) often fail to disentangle geometry from motion blur, leading to ``ghosting'' artifacts where multiple timestamps appear overlaid. 
+As shown in the \textbf{bottom right} of Figure \ref{fig:qualitative_comparison}, methods utilizing compact latent codes (like \textbf{DyNeRF}) demonstrate better temporal consistency, effectively reconstructing sharp appearances even in the presence of fast-moving elements like flames or fluids \cite{dynerf}.
+
+%----------------------------------------------------------------------------------------
+\subsection{Efficiency Analysis}
+Beyond visual fidelity, the practical deployment of dynamic scene modeling hinges on computational efficiency. 
+We analyze the trade-offs across three key dimensions: training convergence, rendering latency, and storage overhead.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Training Efficiency}
+Implicit methods (e.g., D-NeRF, DyNeRF) typically require the longest training times (ranging from hours to days) due to the dense sampling required by volumetric ray-marching during backpropagation. 
+The global nature of MLPs also makes it difficult to update local regions independently.
+Hybrid representations (e.g., TiNeuVox, HexPlane) dramatically accelerate this process (to minutes) by using explicit feature grids that allow for local updates and faster convergence.
+Explicit methods (e.g., 4D-GS) further push the boundary, often converging within minutes (e.g., 8 minutes for 4D-GS \cite{4dgs}). 
+This speedup is attributed to the rasterization-based pipeline, which avoids expensive volumetric sampling and allows gradients to propagate directly to discrete primitives.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Rendering Speed}
+Rendering speed is the primary bottleneck for implicit methods. 
+Standard D-NeRF operates at $<1$ FPS due to the necessity of evaluating a deep MLP hundreds of times per ray. 
+Hybrid methods improve this by replacing MLP evaluations with feature lookups, achieving interactive rates (1--10 FPS) but often falling short of real-time requirements for high-resolution output.
+Explicit Gaussian-based methods demonstrate a decisive advantage here, achieving real-time performance ($30 \sim 100+$ FPS). 
+This is achieved by projecting 3D primitives directly onto the 2D screen (splatting), bypassing the ray-marching loop entirely \cite{deformable_3dgs, 4dgs}.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Storage and Memory Footprint}
+
+\textbf{Storage (Disk)} --- Implicit methods are the most storage-efficient, often compressing an entire dynamic sequence into a few megabytes (MB) of MLP weights (e.g., D-NeRF $< 5$ MB). 
+Explicit methods, conversely, suffer from a ``curse of storage'' as they need to store millions of Gaussian parameters. 
+A naive per-frame 3DGS could consume gigabytes of data. 
+However, recent optimized frameworks like 4D-GS reduce this footprint significantly (e.g., $\sim 18$ MB) by using tensor decomposition (HexPlane) to share features across time, making them competitive with compact implicit models \cite{4dgs, dynerf}.
+
+\textbf{Memory (VRAM)} --- During training and inference, explicit and hybrid methods typically consume more GPU memory (VRAM) to store feature grids or point clouds, whereas pure implicit methods have a lower peak memory footprint but higher computational load.
+
+%----------------------------------------------------------------------------------------
+\subsubsection{Summary of Trade-offs}
+\begin{itemize}
+    \item \textbf{For low-storage, offline applications:} Implicit methods (D-NeRF) remain a strong candidate due to their extreme compactness.
+    \item \textbf{For real-time applications:} Explicit methods (4D-GS) are currently the only viable option for high-resolution ($>1080$p) real-time rendering.
+    \item \textbf{For balanced needs:} Hybrid representations offer a middle ground, providing faster training than pure NeRFs with manageable storage costs.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 \section{Open Challenges and Future Directions}
+Despite the remarkable progress in dynamic scene modeling, several critical challenges remain unresolved. 
+In this section, we identify three emerging research directions that are pivotal for the next generation of immersive media.
+
+%----------------------------------------------------------------------------------------
 \subsection{Storage Efficiency and Compression}
-...
+While explicit methods like 3DGS achieve real-time rendering, they suffer from a high storage footprint compared to implicit MLPs. 
+For instance, a naive dynamic 3DGS implementation can consume gigabytes of storage for a short sequence, as it may spawn millions of primitives. 
+Although methods like \textbf{4D-GS} utilize HexPlane decomposition to reduce this to $\sim 18$ MB, this is still orders of magnitude larger than standard 2D video codecs (e.g., H.264/HEVC).
+\begin{itemize}
+    \item \textbf{Challenge:} Developing standard compression algorithms for 4D primitives.
+    \item \textbf{Future Direction:} Future work may explore \textbf{Vector Quantization (VQ)} or \textbf{Codebook-based learning} to compress Gaussian attributes (color, rotation, covariance) into discrete indices. Additionally, distinct ``Level of Detail'' (LOD) strategies could be developed to stream dynamic 3D content efficiently over limited bandwidth networks, similar to adaptive bitrate streaming for 2D video.
+\end{itemize}
 
+%----------------------------------------------------------------------------------------
 \subsection{Handling Long-Duration Videos}
-...
+Most current benchmarks (e.g., D-NeRF, N3V) are limited to short clips (typically $< 10$ seconds). Scaling reconstruction to minute-long or hour-long videos presents severe bottlenecks. As noted in \textbf{DyNeRF}, training on a 10-second clip already involves billions of ray samples and significant computational resources.
+\begin{itemize}
+    \item \textbf{Challenge:} The ``Curse of Dimensionality'' in the temporal axis. Global MLPs struggle to fit long sequences without forgetting (catastrophic forgetting), while explicit methods run out of VRAM.
+    \item \textbf{Future Direction:} We envision a shift towards \textbf{Streaming Architectures}. Instead of optimizing a global model for the entire video, future systems might employ a ``sliding window'' approach or keyframe-based residue learning. 
+    This would allow the model to reconstruct infinite-length streams by dynamically loading and unloading local spatiotemporal blocks, enabling applications like live volumetric telepresence.
+\end{itemize}
 
+%----------------------------------------------------------------------------------------
 \subsection{Integration with Generative Models}
-...
+The rapid rise of video generation models (e.g., \textbf{Sora}, \textbf{Veo}) has democratized 2D content creation, but these models often lack multi-view consistency and explicit 3D geometry.
+\begin{itemize}
+    \item \textbf{Challenge:} Bridging the gap between 2D generative priors and 3D/4D reconstruction pipelines.
+    \item \textbf{Future Direction:} Dynamic Scene Modeling serves as the ideal ``3D lifting'' mechanism for generative AI. 
+    \begin{enumerate}
+        \item \textbf{Text-to-4D:} Combining text-to-video models with Dynamic 3DGS to generate 4D assets directly from prompts. The explicit nature of Gaussians makes them easier to manipulate than implicit NeRFs.
+        \item \textbf{4D Editing:} Using generative diffusion models to stylize or edit reconstructed 4D scenes (e.g., changing the weather in a captured dynamic video) while maintaining temporal consistency.
+    \end{enumerate}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+\subsection{Disentanglement and Relighting}
+A fundamental limitation of current SOTA methods (including DyNeRF and 3DGS) is the problem of \textbf{``baked-in'' lighting}. 
+Existing frameworks typically model the final radiance color $c$ directly via Spherical Harmonics (SH) or latent codes, which entangles the object's surface material properties with the environmental lighting at the time of capture \cite{4dgs, dynerf}.
+\begin{itemize}
+    \item \textbf{Challenge:} The inability to modify lighting conditions after training. Since shadows and reflections are ``frozen'' into the geometry or texture, moving these objects into a new virtual environment (e.g., in a game engine or Metaverse) results in visual inconsistencies.
+    \item \textbf{Future Direction:} The community is moving towards \textbf{Dynamic Inverse Rendering}. This involves decomposing the radiance field into physically based components: geometry, material (BRDF: albedo, roughness), and spatially-varying lighting. Integrating physics-based rendering (PBR) pipelines with dynamic 3DGS will be crucial for achieving editable, relightable 4D assets.
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 \section{Conclusion}
-...
+In this survey, we have presented a comprehensive taxonomy of dynamic scene modeling, tracing the evolution from implicit deformation fields to the latest explicit 4D Gaussian Splatting techniques. 
+We analyzed the trade-offs between different paradigms: 
+\textbf{Implicit methods} (e.g., D-NeRF) excel in storage efficiency ($<5$ MB) but suffer from slow training. 
+\textbf{Hybrid representations} (e.g., HexPlane) bridge the gap by leveraging spatial data structures for faster convergence. 
+\textbf{Explicit methods} (e.g., 4D-GS) have revolutionized the field by enabling real-time rendering ($>80$ FPS) suitable for interactive applications.
+
+However, as discussed in our analysis of open challenges, the journey is far from over. 
+Future research must address the bottlenecks of storage compression, long-duration video processing, and the disentanglement of lighting from geometry. 
+We believe that the convergence of explicit dynamic representations with generative AI priors will pave the way for the next generation of immersive, editable, and photorealistic 4D content creation.
 
 %----------------------------------------------------------------------------------------
 % References
@@ -521,6 +759,18 @@ This approach effectively skips empty space and serves as a significant precurso
   ``Plenoxels: Radiance Fields without Neural Networks,''
   {\it{arXiv preprint}}, arXiv:2112.05131, 2021.
   [Online]. Available: https://arxiv.org/abs/2112.05131
+
+  \bibitem{tineuvox}
+  Jiemin Fang, Taoran Yi, Xinggang Wang, Lingxi Xie, Xiaopeng Zhang, Wenyu Liu, Matthias Nießner, and Qi Tian,
+  ``Fast Dynamic Radiance Fields with Time-Aware Neural Voxels,''
+  {\it{arXiv preprint}}, arXiv:2205.15285, 2022.
+  [Online]. Available: https://arxiv.org/abs/2205.15285
+
+  \bibitem{hexplane}
+  Ang Cao, and Justin Johnson,
+  ``HexPlane: A Fast Representation for Dynamic Scenes,''
+  {\it{arXiv preprint}}, arXiv:2301.09632, 2023.
+  [Online]. Available: https://arxiv.org/abs/2301.09632
 \end{thebibliography}
 
 \newpage
