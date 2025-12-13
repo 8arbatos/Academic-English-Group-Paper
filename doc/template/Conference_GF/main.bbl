@@ -1,0 +1,1407 @@
+\begin{thebibliography}{100}
+
+\bibitem{alexnet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em NeurIPS}, 2012.
+
+\bibitem{Simonyan15}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock In {\em ICLR}, 2015.
+
+\bibitem{szegedy2015going}
+Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich.
+\newblock Going deeper with convolutions.
+\newblock In {\em CVPR}, 2015.
+
+\bibitem{he2016deep}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{huang2017densely}
+Gao Huang, Zhuang Liu, Laurens Van Der~Maaten, and Kilian~Q Weinberger.
+\newblock Densely connected convolutional networks.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, {\L}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em NeurIPS}, 2017.
+
+\bibitem{devlin_bert_2019}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock {BERT}: {Pre}-training of {Deep} {Bidirectional} {Transformers} for {Language} {Understanding}.
+\newblock In {\em ACL}, 2019.
+
+\bibitem{brown2020language}
+Tom~B Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et~al.
+\newblock Language models are few-shot learners.
+\newblock In {\em NeurIPS}, 2020.
+
+\bibitem{zoph2016neural}
+Barret Zoph and Quoc~V Le.
+\newblock Neural architecture search with reinforcement learning.
+\newblock In {\em ICLR}, 2017.
+
+\bibitem{liu_darts_2018}
+Hanxiao Liu, Karen Simonyan, and Yiming Yang.
+\newblock {DARTS}: {Differentiable} {Architecture} {Search}.
+\newblock In {\em ICLR}, 2018.
+
+\bibitem{graves2016adaptive}
+Alex Graves.
+\newblock Adaptive computation time for recurrent neural networks.
+\newblock {\em arXiv preprint arXiv:1603.08983}, 2016.
+
+\bibitem{huang2017multi}
+Gao Huang, Danlu Chen, Tianhong Li, Felix Wu, Laurens van~der Maaten, and Kilian Weinberger.
+\newblock Multi-scale dense networks for resource efficient image classification.
+\newblock In {\em ICLR}, 2018.
+
+\bibitem{yang2019condconv}
+Brandon Yang, Gabriel Bender, Quoc~V Le, and Jiquan Ngiam.
+\newblock Condconv: Conditionally parameterized convolutions for efficient inference.
+\newblock In {\em NeurIPS}, 2019.
+
+\bibitem{sabour2017dynamic}
+Sara Sabour, Nicholas Frosst, and Geoffrey~E Hinton.
+\newblock Dynamic routing between capsules.
+\newblock In {\em NeurIPs}, 2017.
+
+\bibitem{lin2017runtime}
+Ji~Lin, Yongming Rao, Jiwen Lu, and Jie Zhou.
+\newblock Runtime neural pruning.
+\newblock In {\em NeurIPS}, 2017.
+
+\bibitem{shazeer2017outrageously}
+Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton, and Jeff Dean.
+\newblock Outrageously large neural networks: The sparsely-gated mixture-of-experts layer.
+\newblock In {\em ICLR}, 2017.
+
+\bibitem{bertinetto2016learning}
+Luca Bertinetto, Jo{\~a}o~F Henriques, Jack Valmadre, Philip~HS Torr, and Andrea Vedaldi.
+\newblock Learning feed-forward one-shot learners.
+\newblock In {\em NeurIPS}, 2016.
+
+\bibitem{wang2019tafe}
+Xin Wang, Fisher Yu, Ruth Wang, Trevor Darrell, and Joseph~E Gonzalez.
+\newblock Tafe-net: Task-aware feature embeddings for low shot learning.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{chen_dynamic_2020_attentionOver}
+Yinpeng Chen, Xiyang Dai, Mengchen Liu, Dongdong Chen, Lu~Yuan, and Zicheng Liu.
+\newblock Dynamic convolution: {Attention} over convolution kernels.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{hu2018squeeze}
+Jie Hu, Li~Shen, and Gang Sun.
+\newblock Squeeze-and-excitation networks.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{woo_cbam_2018}
+Sanghyun Woo, Jongchan Park, Joon-Young Lee, and In~So~Kweon.
+\newblock Cbam: {Convolutional} block attention module.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{yang_neural_2017}
+Jiaolong Yang, Peiran Ren, Dongqing Zhang, Dong Chen, Fang Wen, Hongdong Li, and Gang Hua.
+\newblock Neural aggregation network for video face recognition.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock In {\em ICLR}, 2015.
+
+\bibitem{DBLP:journals/corr/IoffeS15}
+Sergey Ioffe and Christian Szegedy.
+\newblock Batch normalization: Accelerating deep network training by reducing internal covariate shift.
+\newblock In {\em ICML}, 2015.
+
+\bibitem{wang2019implicit}
+Yulin Wang, Xuran Pan, Shiji Song, Hong Zhang, Gao Huang, and Cheng Wu.
+\newblock Implicit semantic data augmentation for deep networks.
+\newblock In {\em NeurIPS}, 2019.
+
+\bibitem{DBLP:journals/corr/abs-1805-09501}
+Ekin~D Cubuk, Barret Zoph, Dandelion Mane, Vijay Vasudevan, and Quoc~V Le.
+\newblock Autoaugment: Learning augmentation strategies from data.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{howard2017mobilenets}
+Andrew~G Howard, Menglong Zhu, Bo~Chen, Dmitry Kalenichenko, Weijun Wang, Tobias Weyand, Marco Andreetto, and Hartwig Adam.
+\newblock Mobilenets: Efficient convolutional neural networks for mobile vision applications.
+\newblock {\em arXiv preprint arXiv:1704.04861}, 2017.
+
+\bibitem{huang2018condensenet}
+Gao Huang, Shichen Liu, Laurens Van~der Maaten, and Kilian~Q Weinberger.
+\newblock Condensenet: An efficient densenet using learned group convolutions.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{hubara2016binarized}
+Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Ran El-Yaniv, and Yoshua Bengio.
+\newblock Binarized neural networks.
+\newblock In {\em NeurIPS}, 2016.
+
+\bibitem{hinton2014distilling}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network.
+\newblock In {\em NeurIPS Workshop}, 2014.
+
+\bibitem{low_rank}
+Max Jaderberg, Andrea Vedaldi, and Andrew Zisserman.
+\newblock Speeding up convolutional neural networks with low rank expansions.
+\newblock In {\em BMVC}, 2014.
+
+\bibitem{yang_resolution_2020}
+Le~Yang, Yizeng Han, Xi~Chen, Shiji Song, Jifeng Dai, and Gao Huang.
+\newblock Resolution {Adaptive} {Networks} for {Efficient} {Inference}.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{figurnov2017spatially}
+Michael Figurnov, Maxwell~D Collins, Yukun Zhu, Li~Zhang, Jonathan Huang, Dmitry Vetrov, and Ruslan Salakhutdinov.
+\newblock Spatially adaptive computation time for residual networks.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{li_not_2017}
+Xiaoxiao Li, Ziwei Liu, Ping Luo, Chen Change~Loy, and Xiaoou Tang.
+\newblock Not all pixels are equal: {Difficulty}-aware semantic segmentation via deep layer cascade.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{dehghani_universal_2019}
+Mostafa Dehghani, Stephan Gouws, Oriol Vinyals, Jakob Uszkoreit, and Lukasz Kaiser.
+\newblock Universal {Transformers}.
+\newblock In {\em ICLR}, 2019.
+
+\bibitem{elbayad_depth-adaptive_2020}
+Maha Elbayad, Jiatao Gu, Edouard Grave, and Michael Auli.
+\newblock Depth-{Adaptive} {Transformer}.
+\newblock In {\em ICLR}, 2020.
+
+\bibitem{hubel1962receptive}
+David~H Hubel and Torsten~N Wiesel.
+\newblock Receptive fields, binocular interaction and functional architecture in the cat's visual cortex.
+\newblock {\em The Journal of physiology}, 1962.
+
+\bibitem{murata2000selectivity}
+Akira Murata, Vittorio Gallese, Giuseppe Luppino, Masakazu Kaseda, and Hideo Sakata.
+\newblock Selectivity for the shape, size, and orientation of objects for grasping in neurons of monkey parietal area aip.
+\newblock {\em Journal of neurophysiology}, 2000.
+
+\bibitem{wang2020glance}
+Yulin Wang, Kangchen Lv, Rui Huang, Shiji Song, Le~Yang, and Gao Huang.
+\newblock Glance and focus: a dynamic approach to reducing spatial redundancy in image classification.
+\newblock In {\em NeurIPS}, 2020.
+
+\bibitem{viola_robust_2004}
+Paul Viola and Michael~J. Jones.
+\newblock Robust real-time face detection.
+\newblock {\em IJCV}, 2004.
+
+\bibitem{jacobs1991adaptive}
+Robert~A Jacobs, Michael~I Jordan, Steven~J Nowlan, and Geoffrey~E Hinton.
+\newblock Adaptive mixtures of local experts.
+\newblock {\em Neural computation}, 1991.
+
+\bibitem{maass1997networks}
+Wolfgang Maass.
+\newblock Networks of spiking neurons: the third generation of neural network models.
+\newblock {\em Neural networks}, 1997.
+
+\bibitem{izhikevich2003simple}
+Eugene~M Izhikevich.
+\newblock Simple model of spiking neurons.
+\newblock {\em TNN}, 2003.
+
+\bibitem{liu2017learning}
+Zhuang Liu, Jianguo Li, Zhiqiang Shen, Gao Huang, Shoumeng Yan, and Changshui Zhang.
+\newblock Learning efficient convolutional networks through network slimming.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{teerapittayanon2016branchynet}
+Surat Teerapittayanon, Bradley McDanel, and Hsiang-Tsung Kung.
+\newblock Branchynet: Fast inference via early exiting from deep neural networks.
+\newblock In {\em ICPR}, 2016.
+
+\bibitem{bolukbasi2017adaptive}
+Tolga Bolukbasi, Joseph Wang, Ofer Dekel, and Venkatesh Saligrama.
+\newblock Adaptive neural networks for efficient inference.
+\newblock In {\em ICML}, 2017.
+
+\bibitem{wang2018skipnet}
+Xin Wang, Fisher Yu, Zi-Yi Dou, Trevor Darrell, and Joseph~E Gonzalez.
+\newblock Skipnet: Learning dynamic routing in convolutional networks.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{veit2018convolutional}
+Andreas Veit and Serge Belongie.
+\newblock Convolutional networks with adaptive inference graphs.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{park2015big}
+Eunhyeok Park, Dongyoung Kim, Soobeom Kim, Yong-Deok Kim, Gunhee Kim, Sungroh Yoon, and Sungjoo Yoo.
+\newblock Big/little deep neural network for ultra low power inference.
+\newblock In {\em CODES+ISSS}, 2015.
+
+\bibitem{wang2017idk}
+Xin Wang, Yujia Luo, Daniel Crankshaw, Alexey Tumanov, Fisher Yu, and Joseph~E Gonzalez.
+\newblock Idk cascades: Fast deep learning by learning not to overthink.
+\newblock In {\em AUAI}, 2017.
+
+\bibitem{leroux2017cascading}
+Sam Leroux, Steven Bohez, Elias De~Coninck, Tim Verbelen, Bert Vankeirsbilck, Pieter Simoens, and Bart Dhoedt.
+\newblock The cascading neural network: building the internet of smart things.
+\newblock {\em KAIS}, 2017.
+
+\bibitem{guan2018energy}
+Jiaqi Guan, Yang Liu, Qiang Liu, and Jian Peng.
+\newblock Energy-efficient amortized inference with cascaded deep classifiers.
+\newblock In {\em IJCAI}, 2018.
+
+\bibitem{dai_epnet_2020}
+Xin Dai, Xiangnan Kong, and Tian Guo.
+\newblock Epnet: Learning to exit with flexible multi-branch network.
+\newblock In {\em CIKM}, 2020.
+
+\bibitem{mcgill2017deciding}
+Mason McGill and Pietro Perona.
+\newblock Deciding how to decide: Dynamic routing in artificial neural networks.
+\newblock In {\em ICML}, 2017.
+
+\bibitem{jie2019anytime}
+Zequn Jie, Peng Sun, Xin Li, Jiashi Feng, and Wei Liu.
+\newblock Anytime recognition with routing convolutional networks.
+\newblock {\em TPAMI}, 2019.
+
+\bibitem{li2019improved}
+Hao Li, Hong Zhang, Xiaojuan Qi, Ruigang Yang, and Gao Huang.
+\newblock Improved techniques for training adaptive deep networks.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{liu_fastbert_2020}
+Weijie Liu, Peng Zhou, Zhiruo Wang, Zhe Zhao, Haotang Deng, and QI~JU.
+\newblock {FastBERT}: a {Self}-distilling {BERT} with {Adaptive} {Inference} {Time}.
+\newblock In {\em ACL}, 2020.
+
+\bibitem{xin_deebert_2020}
+Ji~Xin, Raphael Tang, Jaejun Lee, Yaoliang Yu, and Jimmy Lin.
+\newblock {DeeBERT}: {Dynamic} {Early} {Exiting} for {Accelerating} {BERT} {Inference}.
+\newblock In {\em ACL}, 2020.
+
+\bibitem{schwartz_right_2020}
+Roy Schwartz, Gabriel Stanovsky, Swabha Swayamdipta, Jesse Dodge, and Noah~A. Smith.
+\newblock The {Right} {Tool} for the {Job}: {Matching} {Model} and {Instance} {Complexities}.
+\newblock In {\em ACL}, 2020.
+
+\bibitem{zhou_bert_2020}
+Wangchunshu Zhou, Canwen Xu, Tao Ge, Julian McAuley, Ke~Xu, and Furu Wei.
+\newblock {BERT} {Loses} {Patience}: {Fast} and {Robust} {Inference} with {Early} {Exit}.
+\newblock In {\em NeurIPS}, 2020.
+
+\bibitem{fan_watching_2018}
+Hehe Fan, Zhongwen Xu, Linchao Zhu, Chenggang Yan, Jianjun Ge, and Yi~Yang.
+\newblock Watching a small portion could be as good as watching all: {Towards} efficient video classification.
+\newblock In {\em JICAI}, 2018.
+
+\bibitem{wu_dynamic_2020}
+Wenhao Wu, Dongliang He, Xiao Tan, Shifeng Chen, Yi~Yang, and Shilei Wen.
+\newblock Dynamic {Inference}: {A} {New} {Approach} {Toward} {Efficient} {Video} {Action} {Recognition}.
+\newblock In {\em CVPR {Workshop}}, 2020.
+
+\bibitem{shen_reasonet_2017}
+Yelong Shen, Po-Sen Huang, Jianfeng Gao, and Weizhu Chen.
+\newblock Reasonet: {Learning} to stop reading in machine comprehension.
+\newblock In {\em KDD}, 2017.
+
+\bibitem{yu_fast_2018}
+Keyi Yu, Yang Liu, Alexander~G. Schwing, and Jian Peng.
+\newblock Fast and accurate text classification: {Skimming}, rereading and early stopping.
+\newblock In {\em ICLR {Workshop}}, 2018.
+
+\bibitem{liu_finding_2020}
+Xianggen Liu, Lili Mou, Haotian Cui, Zhengdong Lu, and Sen Song.
+\newblock Finding decision jumps in text classification.
+\newblock {\em Neurocomputing}, 2020.
+
+\bibitem{leroux_iamnn_2018}
+Sam Leroux, Pavlo Molchanov, Pieter Simoens, Bart Dhoedt, Thomas Breuel, and Jan Kautz.
+\newblock {IamNN}: {Iterative} and {Adaptive} {Mobile} {Neural} {Network} for {Efficient} {Image} {Classification}.
+\newblock In {\em ICML {Workshop}}, 2018.
+
+\bibitem{Guo_2019_CVPR}
+Qiushan Guo, Zhipeng Yu, Yichao Wu, Ding Liang, Haoyu Qin, and Junjie Yan.
+\newblock Dynamic recursive neural network.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{yu2019any}
+Haichao Yu, Haoxiang Li, Honghui Shi, Thomas~S Huang, and Gang Hua.
+\newblock Any-precision deep neural networks.
+\newblock In {\em AAAI}, 2021.
+
+\bibitem{jin2020adabits}
+Qing Jin, Linjie Yang, and Zhenyu Liao.
+\newblock Adabits: Neural network quantization with adaptive bit-widths.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{shen2020fractional}
+Jianghao Shen, Yonggan Fu, Yue Wang, Pengfei Xu, Zhangyang Wang, and Yingyan Lin.
+\newblock Fractional skipping: Towards finer-grained dynamic cnn inference.
+\newblock In {\em AAAI}, 2020.
+
+\bibitem{wu2018blockdrop}
+Zuxuan Wu, Tushar Nagarajan, Abhishek Kumar, Steven Rennie, Larry~S Davis, Kristen Grauman, and Rogerio Feris.
+\newblock Blockdrop: Dynamic inference paths in residual networks.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{bengio2013estimating}
+Yoshua Bengio, Nicholas L{\'e}onard, and Aaron Courville.
+\newblock Estimating or propagating gradients through stochastic neurons for conditional computation.
+\newblock {\em arXiv preprint arXiv:1308.3432}, 2013.
+
+\bibitem{cho2014exponentially}
+Kyunghyun Cho and Yoshua Bengio.
+\newblock Exponentially increasing the capacity-to-computation ratio for conditional computation in deep learning.
+\newblock {\em arXiv preprint arXiv:1406.7362}, 2014.
+
+\bibitem{bengio2015conditional}
+Emmanuel Bengio, Pierre-Luc Bacon, Joelle Pineau, and Doina Precup.
+\newblock Conditional computation in neural networks for faster models.
+\newblock {\em ICLR Workshop}, 2016.
+
+\bibitem{davis2013low}
+Andrew Davis and Itamar Arel.
+\newblock Low-rank approximations for conditional feedforward computation in deep neural networks.
+\newblock {\em arXiv preprint arXiv:1312.4461}, 2013.
+
+\bibitem{eigen2013learning}
+David Eigen, Marc'Aurelio Ranzato, and Ilya Sutskever.
+\newblock Learning factored representations in a deep mixture of experts.
+\newblock In {\em ICLR Workshop}, 2013.
+
+\bibitem{ma2018modeling}
+Jiaqi Ma, Zhe Zhao, Xinyang Yi, Jilin Chen, Lichan Hong, and Ed~H Chi.
+\newblock Modeling task relationships in multi-task learning with multi-gate mixture-of-experts.
+\newblock In {\em KDD}, 2018.
+
+\bibitem{teja2018hydranets}
+Ravi Teja~Mullapudi, William~R Mark, Noam Shazeer, and Kayvon Fatahalian.
+\newblock Hydranets: Specialized dynamic architectures for efficient inference.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{pmlr-v115-wang20d}
+Xin Wang, Fisher Yu, Lisa Dunlap, Yi-An Ma, Ruth Wang, Azalia Mirhoseini, Trevor Darrell, and Joseph~E. Gonzalez.
+\newblock Deep mixture of experts via shallow embedding.
+\newblock In {\em UAI}, 2020.
+
+\bibitem{caidynamic}
+Shaofeng Cai, Yao Shu, and Wei Wang.
+\newblock Dynamic routing networks.
+\newblock In {\em WACV}, 2021.
+
+\bibitem{2021arXiv210103961F}
+William Fedus, Barret Zoph, and Noam Shazeer.
+\newblock Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity.
+\newblock {\em arXiv preprint arXiv:2101.03961}, 2021.
+
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 1997.
+
+\bibitem{yuan2019s2dnas}
+Zhihang Yuan, Bingzhe Wu, Zheng Liang, Shiwan Zhao, Weichen Bi, and Guangyu Sun.
+\newblock S2dnas: Transforming static cnn model for dynamic inference via neural architecture search.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{hua2019channel}
+Weizhe Hua, Yuan Zhou, Christopher~M De~Sa, Zhiru Zhang, and G~Edward Suh.
+\newblock Channel gating neural networks.
+\newblock In {\em NeurIPS}, 2019.
+
+\bibitem{gao2018dynamic}
+Xitong Gao, Yiren Zhao, Łukasz Dudziak, Robert Mullins, and Cheng zhong Xu.
+\newblock Dynamic channel pruning: Feature boosting and suppression.
+\newblock In {\em ICLR}, 2019.
+
+\bibitem{herrmann2018end}
+Charles Herrmann, Richard~Strong Bowen, and Ramin Zabih.
+\newblock Channel selection using gumbel softmax.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{bejnordi2019batch}
+Babak~Ehteshami Bejnordi, Tijmen Blankevoort, and Max Welling.
+\newblock Batch-shaping for learning conditional channel gated networks.
+\newblock In {\em ICLR}, 2020.
+
+\bibitem{chen2019self}
+Jinting Chen, Zhaocheng Zhu, Cheng Li, and Yuming Zhao.
+\newblock Self-adaptive network pruning.
+\newblock In {\em ICONIP}, 2019.
+
+\bibitem{li2021dynamic_slimmable}
+Changlin Li, Guangrun Wang, Bing Wang, Xiaodan Liang, Zhihui Li, and Xiaojun Chang.
+\newblock Dynamic slimmable network.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{chen2019you}
+Zhourong Chen, Yang Li, Samy Bengio, and Si~Si.
+\newblock You look twice: Gaternet for dynamic filter selection in cnns.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{liu2019learning}
+Chuanjian Liu, Yunhe Wang, Kai Han, Chunjing Xu, and Chang Xu.
+\newblock Learning instance-wise sparsity for accelerating deep models.
+\newblock In {\em IJCAI}, 2019.
+
+\bibitem{wang_dual_2020}
+Yue Wang, Jianghao Shen, Ting-Kuei Hu, Pengfei Xu, Tan Nguyen, Richard~G. Baraniuk, Zhangyang Wang, and Yingyan Lin.
+\newblock Dual dynamic inference: {Enabling} more efficient, adaptive and controllable deep inference.
+\newblock {\em JSTSP}, 2020.
+
+\bibitem{xia2020fully}
+Wenhan Xia, Hongxu Yin, Xiaoliang Dai, and Niraj~K Jha.
+\newblock Fully dynamic inference with deep neural networks.
+\newblock {\em IEEE Transactions on Emerging Topics in Computing}, 2021.
+
+\bibitem{bejnordi2020dynamic}
+Ali~Ehteshami Bejnordi and Ralf Krestel.
+\newblock Dynamic channel and layer gating in convolutional neural networks.
+\newblock In {\em KI}, 2020.
+
+\bibitem{e2018matrix}
+Geoffrey~E Hinton, Sara Sabour, and Nicholas Frosst.
+\newblock Matrix capsules with {EM} routing.
+\newblock In {\em ICLR}, 2018.
+
+\bibitem{odena2017changing}
+Augustus Odena, Dieterich Lawson, and Christopher Olah.
+\newblock Changing model behavior at test-time using reinforcement learning.
+\newblock In {\em ICLR Workshop}, 2017.
+
+\bibitem{liu2018dynamic}
+Lanlan Liu and Jia Deng.
+\newblock Dynamic deep neural networks: Optimizing accuracy-efficiency trade-offs by selective execution.
+\newblock In {\em AAAI}, 2018.
+
+\bibitem{rota2014neural}
+Samuel Rota~Bulo and Peter Kontschieder.
+\newblock Neural decision forests for semantic image labelling.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{kontschieder_deep_2015}
+Peter Kontschieder, Madalina Fiterau, Antonio Criminisi, and Samuel Rota~Bulo.
+\newblock Deep neural decision forests.
+\newblock In {\em ICCV}, 2015.
+
+\bibitem{frosst2017distilling}
+Nicholas Frosst and Geoffrey Hinton.
+\newblock Distilling a neural network into a soft decision tree.
+\newblock {\em arXiv preprint arXiv:1711.09784}, 2017.
+
+\bibitem{hehn2019end}
+Thomas~M Hehn, Julian~FP Kooij, and Fred~A Hamprecht.
+\newblock End-to-end learning of decision trees and forests.
+\newblock {\em IJCV}, 2019.
+
+\bibitem{hazimeh_tree_2020}
+Hussein Hazimeh, Natalia Ponomareva, Petros Mol, Zhenyu Tan, and Rahul Mazumder.
+\newblock The tree ensemble layer: Differentiability meets conditional computation.
+\newblock In {\em ICML}, 2020.
+
+\bibitem{yan2015hd}
+Zhicheng Yan, Hao Zhang, Robinson Piramuthu, Vignesh Jagadeesh, Dennis DeCoste, Wei Di, and Yizhou Yu.
+\newblock Hd-cnn: hierarchical deep convolutional neural networks for large scale visual recognition.
+\newblock In {\em ICCV}, 2015.
+
+\bibitem{ioannou_decision_2016}
+Yani Ioannou, Duncan Robertson, Darko Zikic, Peter Kontschieder, Jamie Shotton, Matthew Brown, and Antonio Criminisi.
+\newblock Decision forests, convolutional networks and the models in-between.
+\newblock {\em arXiv preprint arXiv:1603.01250}, 2016.
+
+\bibitem{tanno_adaptive_2019}
+Ryutaro Tanno, Kai Arulkumaran, Daniel Alexander, Antonio Criminisi, and Aditya Nori.
+\newblock Adaptive neural trees.
+\newblock In {\em ICML}, 2019.
+
+\bibitem{cheng2020instanas}
+An-Chieh Cheng, Chieh~Hubert Lin, Da-Cheng Juan, Wei Wei, and Min Sun.
+\newblock Instanas: Instance-aware neural architecture search.
+\newblock In {\em AAAI}, 2020.
+
+\bibitem{li_learning_2020}
+Yanwei Li, Lin Song, Yukang Chen, Zeming Li, Xiangyu Zhang, Xingang Wang, and Jian Sun.
+\newblock Learning {Dynamic} {Routing} for {Semantic} {Segmentation}.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{harley_segmentation-aware_2017}
+Adam~W. Harley, Konstantinos~G. Derpanis, and Iasonas Kokkinos.
+\newblock Segmentation-aware convolutional networks using local attention masks.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{su_pixel-adaptive_2019}
+Hang Su, Varun Jampani, Deqing Sun, Orazio Gallo, Erik Learned-Miller, and Jan Kautz.
+\newblock Pixel-adaptive convolutional neural networks.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{dai2017deformable}
+Jifeng Dai, Haozhi Qi, Yuwen Xiong, Yi~Li, Guodong Zhang, Han Hu, and Yichen Wei.
+\newblock Deformable convolutional networks.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{zhu_deformable_2019}
+Xizhou Zhu, Han Hu, Stephen Lin, and Jifeng Dai.
+\newblock Deformable convnets v2: {More} deformable, better results.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{gao_deformable_2019}
+Hang Gao, Xizhou Zhu, Stephen Lin, and Jifeng Dai.
+\newblock Deformable {Kernels}: {Adapting} {Effective} {Receptive} {Fields} for {Object} {Deformation}.
+\newblock In {\em ICLR}, 2019.
+
+\bibitem{shan2020meta}
+Siyuan Shan, Yang Li, and Junier~B Oliva.
+\newblock Meta-neighborhoods.
+\newblock {\em NeurIPS}, 2020.
+
+\bibitem{huang2021codenet}
+Qijing Huang, Dequan Wang, Zhen Dong, Yizhao Gao, Yaohui Cai, Tian Li, Bichen Wu, Kurt Keutzer, and John Wawrzynek.
+\newblock Codenet: Efficient deployment of input-adaptive object detection on embedded fpgas.
+\newblock In {\em FPGA}, 2021.
+
+\bibitem{denil_predicting_2013}
+Misha Denil, Babak Shakibi, Laurent Dinh, Marc'Aurelio Ranzato, and Nando De~Freitas.
+\newblock Predicting parameters in deep learning.
+\newblock In {\em NeurIPS}, 2013.
+
+\bibitem{schmidhuber1992learning}
+J{\"u}rgen Schmidhuber.
+\newblock Learning to control fast-weight memories: An alternative to dynamic recurrent networks.
+\newblock {\em Neural Computation}, 1992.
+
+\bibitem{jia2016dynamic}
+Xu~Jia, Bert De~Brabandere, Tinne Tuytelaars, and Luc~V Gool.
+\newblock Dynamic filter networks.
+\newblock In {\em NeurIPS}, 2016.
+
+\bibitem{ha2016hypernetworks}
+David Ha, Andrew Dai, and Quoc~V Le.
+\newblock Hypernetworks.
+\newblock In {\em ICLR}, 2016.
+
+\bibitem{ma_weightnet_2020}
+Ningning Ma, Xiangyu Zhang, Jiawei Huang, and Jian Sun.
+\newblock {WeightNet}: {Revisiting} the {Design} {Space} of {Weight} {Networks}.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{bello2021lambdanetworks}
+Irwan Bello.
+\newblock Lambdanetworks: Modeling long-range interactions without attention.
+\newblock In {\em ICLR}, 2021.
+
+\bibitem{simonovsky_dynamic_2017}
+Martin Simonovsky and Nikos Komodakis.
+\newblock Dynamic {Edge}-{Conditioned} {Filters} in {Convolutional} {Neural} {Networks} on {Graphs}.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{kang2017incorporating}
+Di~Kang, Debarun Dhar, and Antoni Chan.
+\newblock Incorporating side information by adaptive convolution.
+\newblock In {\em NeurIPS}, 2017.
+
+\bibitem{de2017modulating}
+Harm de~Vries, Florian Strub, J{\'e}r{\'e}mie Mary, Hugo Larochelle, Olivier Pietquin, and Aaron Courville.
+\newblock Modulating early visual processing by language.
+\newblock In {\em NeurIPS}, 2017.
+
+\bibitem{perez2018film}
+Ethan Perez, Florian Strub, Harm De~Vries, Vincent Dumoulin, and Aaron Courville.
+\newblock Film: Visual reasoning with a general conditioning layer.
+\newblock In {\em AAAI}, 2018.
+
+\bibitem{lee2019srm}
+HyunJae Lee, Hyo-Eun Kim, and Hyeonseob Nam.
+\newblock Srm: A style-based recalibration module for convolutional neural networks.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{wang_eca-net_2020}
+Qilong Wang, Banggu Wu, Pengfei Zhu, Peihua Li, Wangmeng Zuo, and Qinghua Hu.
+\newblock {ECA}-net: {Efficient} channel attention for deep convolutional neural networks.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{guo_spanet_2020}
+Jingda Guo, Xu~Ma, Andrew Sansom, Mara McGuire, Andrew Kalaani, Qi~Chen, Sihai Tang, Qing Yang, and Song Fu.
+\newblock Spanet: {Spatial} {Pyramid} {Attention} {Network} for {Enhanced} {Image} {Recognition}.
+\newblock In {\em ICME}, 2020.
+
+\bibitem{wang2017residual}
+Fei Wang, Mengqing Jiang, Chen Qian, Shuo Yang, Cheng Li, Honggang Zhang, Xiaogang Wang, and Xiaoou Tang.
+\newblock Residual attention network for image classification.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{roy2018concurrent}
+Abhijit~Guha Roy, Nassir Navab, and Christian Wachinger.
+\newblock Concurrent spatial and channel ‘squeeze \& excitation’in fully convolutional networks.
+\newblock In {\em MICCAI}, 2018.
+
+\bibitem{chen_sca-cnn_2017}
+Long Chen, Hanwang Zhang, Jun Xiao, Liqiang Nie, Jian Shao, Wei Liu, and Tat-Seng Chua.
+\newblock Sca-cnn: {Spatial} and channel-wise attention in convolutional networks for image captioning.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{hu2018gather}
+Jie Hu, Li~Shen, Samuel Albanie, Gang Sun, and Andrea Vedaldi.
+\newblock Gather-excite: Exploiting feature context in convolutional neural networks.
+\newblock In {\em NeurIPS}, 2018.
+
+\bibitem{chen_dynamic_2020_relu}
+Yinpeng Chen, Xiyang Dai, Mengchen Liu, Dongdong Chen, Lu~Yuan, and Zicheng Liu.
+\newblock Dynamic relu.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{ma2020funnel}
+Ningning Ma, Xiangyu Zhang, and Jian Sun.
+\newblock Funnel activation for visual recognition.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{li_selective_2019}
+Xiang Li, Wenhai Wang, Xiaolin Hu, and Jian Yang.
+\newblock Selective kernel networks.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{wang_autoscaler_2016}
+Shenlong Wang, Linjie Luo, Ning Zhang, and Li-Jia Li.
+\newblock Autoscaler: Scale-attention networks for visual correspondence.
+\newblock In {\em BMVC}, 2017.
+
+\bibitem{wang2018non}
+Xiaolong Wang, Ross Girshick, Abhinav Gupta, and Kaiming He.
+\newblock Non-local neural networks.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{yue2018compact}
+Kaiyu Yue, Ming Sun, Yuchen Yuan, Feng Zhou, Errui Ding, and Fuxin Xu.
+\newblock Compact generalized non-local network.
+\newblock In {\em NeurIPS}, 2018.
+
+\bibitem{dosovitskiy2020image}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby.
+\newblock An image is worth 16x16 words: Transformers for image recognition at scale.
+\newblock In {\em ICLR}, 2021.
+
+\bibitem{chaudhari2019attentive}
+Sneha Chaudhari, Gungor Polatkan, Rohan Ramanath, and Varun Mithal.
+\newblock An attentive survey of attention models.
+\newblock {\em TIST}, 2021.
+
+\bibitem{zhu2019empirical}
+Xizhou Zhu, Dazhi Cheng, Zheng Zhang, Stephen Lin, and Jifeng Dai.
+\newblock An empirical study of spatial attention mechanisms in deep networks.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{khan2021transformers}
+Salman Khan, Muzammal Naseer, Munawar Hayat, Syed~Waqas Zamir, Fahad~Shahbaz Khan, and Mubarak Shah.
+\newblock Transformers in vision: A survey.
+\newblock {\em arXiv preprint arXiv:2101.01169}, 2021.
+
+\bibitem{zhou2016learning}
+Bolei Zhou, Aditya Khosla, Agata Lapedriza, Aude Oliva, and Antonio Torralba.
+\newblock Learning deep features for discriminative localization.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{ren_sbnet_2018}
+Mengye Ren, Andrei Pokrovsky, Bin Yang, and Raquel Urtasun.
+\newblock {SBNet}: {Sparse} {Blocks} {Network} for {Fast} {Inference}.
+\newblock {\em CVPR}, 2018.
+
+\bibitem{dong_more_2017}
+Xuanyi Dong, Junshi Huang, Yi~Yang, and Shuicheng Yan.
+\newblock More is less: {A} more complicated network with less inference complexity.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{cao_seernet_2019}
+Shijie Cao, Lingxiao Ma, Wencong Xiao, Chen Zhang, Yunxin Liu, Lintao Zhang, Lanshun Nie, and Zhi Yang.
+\newblock Seernet: {Predicting} convolutional neural network feature-map sparsity through low-bit quantization.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{kong_pixel-wise_2019}
+Shu Kong and Charless Fowlkes.
+\newblock Pixel-wise attentional gating for scene parsing.
+\newblock In {\em WACV}, 2019.
+
+\bibitem{verelst_dynamic_2020}
+Thomas Verelst and Tinne Tuytelaars.
+\newblock Dynamic {Convolutions}: {Exploiting} {Spatial} {Sparsity} for {Faster} {Inference}.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{xie_spatially_2020}
+Zhenda Xie, Zheng Zhang, Xizhou Zhu, Gao Huang, and Stephen Lin.
+\newblock Spatially {Adaptive} {Inference} with {Stochastic} {Feature} {Sampling} and {Interpolation}.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{almahairi2016dynamic}
+Amjad Almahairi, Nicolas Ballas, Tim Cooijmans, Yin Zheng, Hugo Larochelle, and Aaron Courville.
+\newblock Dynamic capacity networks.
+\newblock In {\em ICML}, 2016.
+
+\bibitem{kirillov2020pointrend}
+Alexander Kirillov, Yuxin Wu, Kaiming He, and Ross Girshick.
+\newblock Pointrend: Image segmentation as rendering.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{bhowmik_training-free_2017}
+Aritra Bhowmik, Suprosanna Shit, and Chandra~Sekhar Seelamantula.
+\newblock Training-free, single-image super-resolution using a dynamic convolutional network.
+\newblock {\em IEEE Signal Processing Letters}, 2017.
+
+\bibitem{wu_dynamic_2018}
+Jialin Wu, Dai Li, Yu~Yang, Chandrajit Bajaj, and Xiangyang Ji.
+\newblock Dynamic filtering with large sampling field for convnets.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{hu_meta-sr_2019}
+Xuecai Hu, Haoyuan Mu, Xiangyu Zhang, Zilei Wang, Tieniu Tan, and Jian Sun.
+\newblock Meta-{SR}: {A} magnification-arbitrary network for super-resolution.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{wang_carafe_2019}
+Jiaqi Wang, Kai Chen, Rui Xu, Ziwei Liu, Chen~Change Loy, and Dahua Lin.
+\newblock {CARAFE}: {Content}-{Aware} {ReAssembly} of {FEatures}.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{chen_dynamic_2020}
+Jin Chen, Xijun Wang, Zichao Guo, Xiangyu Zhang, and Jian Sun.
+\newblock Dynamic region-aware convolution.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{wang_adaptively_2019}
+Guangrun Wang, Keze Wang, and Liang Lin.
+\newblock Adaptively connected neural networks.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{jaderberg_spatial_2015}
+Max Jaderberg, Karen Simonyan, and Andrew Zisserman.
+\newblock Spatial transformer networks.
+\newblock In {\em NeurIPS}, 2015.
+
+\bibitem{recasens_learning_2018}
+Adria Recasens, Petr Kellnhofer, Simon Stent, Wojciech Matusik, and Antonio Torralba.
+\newblock Learning to zoom: a saliency-based sampling layer for neural networks.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{mnih_recurrent_2014}
+Volodymyr Mnih, Nicolas Heess, and Alex Graves.
+\newblock Recurrent models of visual attention.
+\newblock In {\em NeurIPS}, 2014.
+
+\bibitem{li_dynamic_2017}
+Zhichao Li, Yi~Yang, Xiao Liu, Feng Zhou, Shilei Wen, and Wei Xu.
+\newblock Dynamic computational time for visual attention.
+\newblock In {\em ICCV {Workshop}}, 2017.
+
+\bibitem{rosenfeld_visual_2016}
+Amir Rosenfeld and Shimon Ullman.
+\newblock Visual concept recognition and localization via iterative introspection.
+\newblock In {\em ACCV}, 2016.
+
+\bibitem{fu_look_2017}
+Jianlong Fu, Heliang Zheng, and Tao Mei.
+\newblock Look closer to see better: {Recurrent} attention convolutional neural network for fine-grained image recognition.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{cordonnier2021differentiable}
+Jean-Baptiste Cordonnier, Aravindh Mahendran, Alexey Dosovitskiy, Dirk Weissenborn, Jakob Uszkoreit, and Thomas Unterthiner.
+\newblock Differentiable patch selection for image recognition.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{hao_scale-aware_2017}
+Zekun Hao, Yu~Liu, Hongwei Qin, Junjie Yan, Xiu Li, and Xiaolin Hu.
+\newblock Scale-aware face detection.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{yang_dynamic-stride-net_2019}
+Zerui Yang, Yuhui Xu, Wenrui Dai, and Hongkai Xiong.
+\newblock Dynamic-stride-net: deep convolutional neural network with dynamic stride.
+\newblock In {\em SPIE Optoelectronic Imaging and Multimedia Technology}, 2019.
+
+\bibitem{wang_elastic_2019}
+Huiyu Wang, Aniruddha Kembhavi, Ali Farhadi, Alan~L. Yuille, and Mohammad Rastegari.
+\newblock Elastic: {Improving} cnns with dynamic scaling policies.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{campos_skip_2018}
+Víctor Campos, Brendan Jou, Xavier Giró-I-Nieto, Jordi Torres, and Shih~Fu Chang.
+\newblock Skip {RNN}: {Learning} to skip state updates in recurrent neural networks.
+\newblock In {\em ICLR}, 2018.
+
+\bibitem{hansen_neural_2019}
+Christian Hansen, Casper Hansen, Stephen Alstrup, Jakob~Grue Simonsen, and Christina Lioma.
+\newblock Neural {Speed} {Reading} with {Structural}-{Jump}-{LSTM}.
+\newblock In {\em ICLR}, 2019.
+
+\bibitem{tao_skipping_2019}
+Jin Tao, Urmish Thakker, Ganesh Dasika, and Jesse Beu.
+\newblock Skipping {RNN} {State} {Updates} without {Retraining} the {Original} {Model}.
+\newblock In {\em SenSys-ML}, 2019.
+
+\bibitem{jernite_variable_2017}
+Yacine Jernite, Edouard Grave, Armand Joulin, and Tomas Mikolov.
+\newblock Variable computation in recurrent neural networks.
+\newblock In {\em ICLR}, 2017.
+
+\bibitem{seo_neural_2018}
+Minjoon Seo, Sewon Min, Ali Farhadi, and Hannaneh Hajishirzi.
+\newblock Neural {Speed} {Reading} via {Skim}-{RNN}.
+\newblock In {\em ICLR}, 2018.
+
+\bibitem{chung_hierarchical_2017}
+Junyoung Chung, Sungjin Ahn, and Yoshua Bengio.
+\newblock Hierarchical multiscale recurrent neural networks.
+\newblock In {\em ICLR}, 2017.
+
+\bibitem{ke_focused_2018}
+Nan~Rosemary Ke, Konrad Żołna, Alessandro Sordoni, Zhouhan Lin, Adam Trischler, Yoshua Bengio, Joelle Pineau, Laurent Charlin, and Christopher Pal.
+\newblock Focused {Hierarchical} {RNNs} for {Conditional} {Sequence} {Processing}.
+\newblock In {\em ICML}, 2018.
+
+\bibitem{huang_length_2017}
+Zhengjie Huang, Zi~Ye, Shuangyin Li, and Rong Pan.
+\newblock Length adaptive recurrent model for text classification.
+\newblock In {\em CIKM}, 2017.
+
+\bibitem{yu_learning_2017}
+Adams~Wei Yu, Hongrae Lee, and Quoc Le.
+\newblock Learning to {Skim} {Text}.
+\newblock In {\em ACL}, 2017.
+
+\bibitem{fu_speed_2018}
+Tsu-Jui Fu and Wei-Yun Ma.
+\newblock Speed {Reading}: {Learning} to {Read} {ForBackward} via {Shuttle}.
+\newblock In {\em EMNLP}, 2018.
+
+\bibitem{wu_liteeval_2019}
+Zuxuan Wu, Caiming Xiong, Yu-Gang Jiang, and Larry~S. Davis.
+\newblock Liteeval: {A} coarse-to-fine framework for resource efficient video recognition.
+\newblock In {\em NeurIPS}, 2019.
+
+\bibitem{vaudaux-ruth_actionspotter_2020}
+Guillaume Vaudaux-Ruth, Adrien Chan-Hon-Tong, and Catherine Achard.
+\newblock Actionspotter: Deep reinforcement learning framework for temporal action spotting in videos.
+\newblock In {\em ICPR}, 2020.
+
+\bibitem{yeung_end--end_2016}
+Serena Yeung, Olga Russakovsky, Greg Mori, and Li~Fei-Fei.
+\newblock End-to-end learning of action detection from frame glimpses in videos.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{su_leaving_2016}
+Yu-Chuan Su and Kristen Grauman.
+\newblock Leaving some stones unturned: dynamic feature prioritization for activity detection in streaming video.
+\newblock In {\em ECCV}, 2016.
+
+\bibitem{wu_adaframe_2019}
+Zuxuan Wu, Caiming Xiong, Chih-Yao Ma, Richard Socher, and Larry~S. Davis.
+\newblock {AdaFrame}: {Adaptive} {Frame} {Selection} for {Fast} {Video} {Recognition}.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{meng2021adafuse}
+Yue Meng, Rameswar Panda, Chung-Ching Lin, Prasanna Sattigeri, Leonid Karlinsky, Kate Saenko, Aude Oliva, and Rogerio Feris.
+\newblock Adafuse: Adaptive temporal fusion network for efficient action recognition.
+\newblock In {\em ICLR}, 2021.
+
+\bibitem{sun2021dynamic}
+Ximeng Sun, Rameswar Panda, Chun-Fu Chen, Aude Oliva, Rogerio Feris, and Kate Saenko.
+\newblock Dynamic network quantization for efficient video inference.
+\newblock In {\em ICCV}, 2021.
+
+\bibitem{weng2021hms}
+Zejia Weng, Zuxuan Wu, Hengduo Li, and Yu-Gang Jiang.
+\newblock Hms: Hierarchical modality selectionfor efficient video recognition.
+\newblock {\em arXiv preprint arXiv:2104.09760}, 2021.
+
+\bibitem{panda2021adamml}
+Rameswar Panda, Chun-Fu Chen, Quanfu Fan, Ximeng Sun, Kate Saenko, Aude Oliva, and Rogerio Feris.
+\newblock Adamml: Adaptive multi-modal learning for efficient video recognition.
+\newblock {\em arXiv preprint arXiv:2105.05165}, 2021.
+
+\bibitem{ghodrati2021frameexit}
+Amir Ghodrati, Babak~Ehteshami Bejnordi, and Amirhossein Habibian.
+\newblock Frameexit: Conditional early exiting for efficient video recognition.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{alwassel_action_2018}
+Humam Alwassel, Fabian Caba~Heilbron, and Bernard Ghanem.
+\newblock Action search: {Spotting} actions in videos and its application to temporal action localization.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{rao_attention-aware_2017}
+Yongming Rao, Jiwen Lu, and Jie Zhou.
+\newblock Attention-aware deep reinforcement learning for video face recognition.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{tang_deep_2018}
+Yansong Tang, Yi~Tian, Jiwen Lu, Peiyang Li, and Jie Zhou.
+\newblock Deep {Progressive} {Reinforcement} {Learning} for {Skeleton}-{Based} {Action} {Recognition}.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{wu_multi-agent_2019}
+Wenhao Wu, Dongliang He, Xiao Tan, Shifeng Chen, and Shilei Wen.
+\newblock Multi-agent reinforcement learning based frame sampling for effective untrimmed video recognition.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{korbar_scsampler_2019}
+Bruno Korbar, Du~Tran, and Lorenzo Torresani.
+\newblock Scsampler: {Sampling} salient clips from video for efficient action recognition.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{zheng_dynamic_2020}
+Yin-Dong Zheng, Zhaoyang Liu, Tong Lu, and Limin Wang.
+\newblock Dynamic {Sampling} {Networks} for {Efficient} {Action} {Recognition} in {Videos}.
+\newblock {\em TIP}, 2020.
+
+\bibitem{han2020model}
+Kai Han, Yunhe Wang, Qiulin Zhang, Wei Zhang, Chunjing Xu, and Tong Zhang.
+\newblock Model rubik’s cube: Twisting resolution, depth and width for tinynets.
+\newblock {\em NeurIPS}, 2020.
+
+\bibitem{fan2020rubiksnet}
+Linxi Fan, Shyamal Buch, Guanzhi Wang, Ryan Cao, Yuke Zhu, Juan~Carlos Niebles, and Li~Fei-Fei.
+\newblock Rubiksnet: Learnable 3d-shift for efficient video action recognition.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{li20202d}
+Hengduo Li, Zuxuan Wu, Abhinav Shrivastava, and Larry~S Davis.
+\newblock 2d or not 2d? adaptive 3d convolution selection for efficient video recognition.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{meng2020ar}
+Yue Meng, Chung-Ching Lin, Rameswar Panda, Prasanna Sattigeri, Leonid Karlinsky, Aude Oliva, Kate Saenko, and Rogerio Feris.
+\newblock Ar-net: Adaptive frame resolution for efficient action recognition.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{wang2021adaptive}
+Yulin Wang, Zhaoxi Chen, Haojun Jiang, Shiji Song, Yizeng Han, and Gao Huang.
+\newblock Adaptive focus for efficient video recognition.
+\newblock {\em ICCV}, 2021.
+
+\bibitem{pan2021va}
+Bowen Pan, Rameswar Panda, Camilo Fosco, Chung-Ching Lin, Alex Andonian, Yue Meng, Kate Saenko, Aude Oliva, and Rogerio Feris.
+\newblock Va-red \^{} 2: Video adaptive redundancy reduction.
+\newblock In {\em ICLR}, 2021.
+
+\bibitem{fayyaz20213d}
+Mohsen Fayyaz, Emad Bahrami, Ali Diba, Mehdi Noroozi, Ehsan Adeli, Luc Van~Gool, and Jurgen Gall.
+\newblock 3d cnns with adaptive temporal feature resolutions.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{verelst2021blockcopy}
+Thomas Verelst and Tinne Tuytelaars.
+\newblock Blockcopy: High-resolution video processing with block-sparse feature propagation and online policies.
+\newblock In {\em ICCV}, 2021.
+
+\bibitem{guo2017calibration}
+Chuan Guo, Geoff Pleiss, Yu~Sun, and Kilian~Q Weinberger.
+\newblock On calibration of modern neural networks.
+\newblock In {\em ICML}, 2017.
+
+\bibitem{hein2019relu}
+Matthias Hein, Maksym Andriushchenko, and Julian Bitterwolf.
+\newblock Why relu networks yield high-confidence predictions far away from the training data and how to mitigate the problem.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{rowley1998neural}
+Henry~A Rowley, Shumeet Baluja, and Takeo Kanade.
+\newblock Neural network-based face detection.
+\newblock {\em TPAMI}, 1998.
+
+\bibitem{li_convolutional_2015}
+Haoxiang Li, Zhe Lin, Xiaohui Shen, Jonathan Brandt, and Gang Hua.
+\newblock A convolutional neural network cascade for face detection.
+\newblock In {\em CVPR}, 2015.
+
+\bibitem{sun2013deep}
+Yi~Sun, Xiaogang Wang, and Xiaoou Tang.
+\newblock Deep convolutional network cascade for facial point detection.
+\newblock In {\em CVPR}, 2013.
+
+\bibitem{angelova_real_time_2015}
+Anelia Angelova, Alex Krizhevsky, Vincent Vanhoucke, Abhijit Ogale, and Dave Ferguson.
+\newblock Real-{Time} {Pedestrian} {Detection} with {Deep} {Network} {Cascades}.
+\newblock In {\em BMVC}, 2015.
+
+\bibitem{yang_exploit_2016}
+Fan Yang, Wongun Choi, and Yuanqing Lin.
+\newblock Exploit all the layers: {Fast} and accurate cnn object detector with scale dependent pooling and cascaded rejection classifiers.
+\newblock In {\em CVPR}, 2016.
+
+\bibitem{zhou_adaptive_2017}
+Hong-Yu Zhou, Bin-Bin Gao, and Jianxin Wu.
+\newblock Adaptive feeding: {Achieving} fast and accurate detections by adaptively combining object detectors.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{yang_metaanchor_2018}
+Tong Yang, Xiangyu Zhang, Zeming Li, Wenqiang Zhang, and Jian Sun.
+\newblock Metaanchor: {Learning} to detect objects with customized anchors.
+\newblock In {\em NeurIPS}, 2018.
+
+\bibitem{chen_adaptive_2019}
+Chunlin Chen and Qiang Ling.
+\newblock Adaptive {Convolution} for {Object} {Detection}.
+\newblock {\em IEEE Transactions on Multimedia}, 2019.
+
+\bibitem{tokunaga2019adaptive}
+Hiroki Tokunaga, Yuki Teramoto, Akihiko Yoshizawa, and Ryoma Bise.
+\newblock Adaptive weighting multi-field-of-view cnn for semantic segmentation in pathology.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{wang2020deep}
+Yikai Wang, Wenbing Huang, Fuchun Sun, Tingyang Xu, Yu~Rong, and Junzhou Huang.
+\newblock Deep multimodal fusion by channel exchanging.
+\newblock In {\em NeurIPS}, 2020.
+
+\bibitem{riegler_conditioned_2015}
+Gernot Riegler, Samuel Schulter, Matthias Ruther, and Horst Bischof.
+\newblock Conditioned regression models for non-blind single image super-resolution.
+\newblock In {\em ICCV}, 2015.
+
+\bibitem{shen_neural_2018}
+Falong Shen, Shuicheng Yan, and Gang Zeng.
+\newblock Neural style transfer via meta networks.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{jiang2020learning}
+Yu-Gang Jiang, Changmao Cheng, Hangyu Lin, and Yanwei Fu.
+\newblock Learning layer-skippable inference network.
+\newblock {\em TIP}, 2020.
+
+\bibitem{he_dynamic_2019}
+Junjun He, Zhongying Deng, and Yu~Qiao.
+\newblock Dynamic multi-scale filters for semantic segmentation.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{marin_efficient_2019}
+Dmitrii Marin, Zijian He, Peter Vajda, Priyam Chatterjee, Sam Tsai, Fei Yang, and Yuri Boykov.
+\newblock Efficient segmentation: {Learning} downsampling near semantic boundaries.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{li_dense_2017}
+Jun Li, Yongjun Chen, Lei Cai, Ian Davidson, and Shuiwang Ji.
+\newblock Dense transformer networks for brain electron microscopy image segmentation.
+\newblock In {\em IJCAI}, 2019.
+
+\bibitem{wu_dynamicAttention_2020}
+Fei Wu, Feng Chen, Xiao-Yuan Jing, Chang-Hui Hu, Qi~Ge, and Yimu Ji.
+\newblock Dynamic attention network for semantic segmentation.
+\newblock {\em Neurocomputing}, 2020.
+
+\bibitem{zhong_squeeze-and-attention_2020}
+Zilong Zhong, Zhong~Qiu Lin, Rene Bidart, Xiaodan Hu, Ibrahim~Ben Daya, Zhifeng Li, Wei-Shi Zheng, Jonathan Li, and Alexander Wong.
+\newblock Squeeze-and-{Attention} {Networks} for {Semantic} {Segmentation}.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{huang2018multimodal}
+Xun Huang, Ming-Yu Liu, Serge Belongie, and Jan Kautz.
+\newblock Multimodal unsupervised image-to-image translation.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{liu_learning_2019}
+Xihui Liu, Guojun Yin, Jing Shao, Xiaogang Wang, and hongsheng Li.
+\newblock Learning to {Predict} {Layout}-to-image {Conditional} {Convolutions} for {Semantic} {Image} {Synthesis}.
+\newblock In {\em NeurIPS}, 2019.
+
+\bibitem{park_semantic_2019}
+Taesung Park, Ming-Yu Liu, Ting-Chun Wang, and Jun-Yan Zhu.
+\newblock Semantic image synthesis with spatially-adaptive normalization.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{zhu_sean_2020}
+Peihao Zhu, Rameen Abdal, Yipeng Qin, and Peter Wonka.
+\newblock {SEAN}: {Image} {Synthesis} with {Semantic} {Region}-{Adaptive} {Normalization}.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{chang2020spatial}
+Meng Chang, Qi~Li, Huajun Feng, and Zhihai Xu.
+\newblock Spatial-adaptive network for single image denoising.
+\newblock In {\em ECCV}, 2020.
+
+\bibitem{xiao_application_2015}
+Tianjun Xiao, Yichong Xu, Kuiyuan Yang, Jiaxing Zhang, Yuxin Peng, and Zheng Zhang.
+\newblock The application of two-level attention models in deep convolutional neural network for fine-grained image classification.
+\newblock In {\em CVPR}, 2015.
+
+\bibitem{zheng_learning_2017}
+Heliang Zheng, Jianlong Fu, Tao Mei, and Jiebo Luo.
+\newblock Learning multi-attention convolutional neural network for fine-grained image recognition.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{sun_learned_2020}
+Wanjie Sun and Zhenzhong Chen.
+\newblock Learned image downscaling for upscaling using content adaptive resampler.
+\newblock {\em TIP}, 2020.
+
+\bibitem{ba_multiple_2015}
+Jimmy Ba, Volodymyr Mnih, and Koray Kavukcuoglu.
+\newblock Multiple object recognition with visual attention.
+\newblock In {\em ICLR}, 2015.
+
+\bibitem{eslami_attend_2016}
+SM~Ali Eslami, Nicolas Heess, Theophane Weber, Yuval Tassa, David Szepesvari, and Geoffrey~E. Hinton.
+\newblock Attend, infer, repeat: {Fast} scene understanding with generative models.
+\newblock In {\em NeurIPS}, 2016.
+
+\bibitem{diba_dynamonet_2019}
+Ali Diba, Vivek Sharma, Luc~Van Gool, and Rainer Stiefelhagen.
+\newblock Dynamonet: {Dynamic} action and motion network.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{gao_listen_2020}
+Ruohan Gao, Tae-Hyun Oh, Kristen Grauman, and Lorenzo Torresani.
+\newblock Listen to look: {Action} recognition by previewing audio.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{xu2018dynamic}
+Yu-Syuan Xu, Tsu-Jui Fu, Hsuan-Kung Yang, and Chun-Yi Lee.
+\newblock Dynamic video segmentation network.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{niklaus_video_2017}
+Simon Niklaus, Long Mai, and Feng Liu.
+\newblock Video frame interpolation via adaptive separable convolution.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{niklaus_video_2017-1}
+Simon Niklaus, Long Mai, and Feng Liu.
+\newblock Video frame interpolation via adaptive convolution.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{jo_deep_2018}
+Younghyun Jo, Seoung Wug~Oh, Jaeyeon Kang, and Seon Joo~Kim.
+\newblock Deep video super-resolution network using dynamic upsampling filters without explicit motion compensation.
+\newblock In {\em CVPR}, 2018.
+
+\bibitem{hyun2017online}
+Tae Hyun~Kim, Kyoung Mu~Lee, Bernhard Scholkopf, and Michael Hirsch.
+\newblock Online video deblurring via dynamic temporal blending network.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{zhou_spatio-temporal_2019}
+Shangchen Zhou, Jiawei Zhang, Jinshan Pan, Haozhe Xie, Wangmeng Zuo, and Jimmy Ren.
+\newblock Spatio-temporal filter adaptive network for video deblurring.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{chen_part-activated_2018}
+Lei Chen, Jiwen Lu, Zhanjie Song, and Jie Zhou.
+\newblock Part-activated deep reinforcement learning for action prediction.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{thomas_kpconv_2019}
+Hugues Thomas, Charles~R. Qi, Jean-Emmanuel Deschaud, Beatriz Marcotegui, François Goulette, and Leonidas~J. Guibas.
+\newblock Kpconv: {Flexible} and deformable convolution for point clouds.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{li2020anisotropic}
+Jie Li, Kai Han, Peng Wang, Yu~Liu, and Xia Yuan.
+\newblock Anisotropic convolutional networks for 3d semantic scene completion.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{xu_show_2015}
+Kelvin Xu, Jimmy Ba, Ryan Kiros, Kyunghyun Cho, Aaron Courville, Ruslan Salakhudinov, Rich Zemel, and Yoshua Bengio.
+\newblock Show, attend and tell: {Neural} image caption generation with visual attention.
+\newblock In {\em ICML}, 2015.
+
+\bibitem{hori2017attention}
+Chiori Hori, Takaaki Hori, Teng-Yok Lee, Ziming Zhang, Bret Harsham, John~R Hershey, Tim~K Marks, and Kazuhiko Sumi.
+\newblock Attention-based multimodal fusion for video description.
+\newblock In {\em ICCV}, 2017.
+
+\bibitem{sun2019videobert}
+Chen Sun, Austin Myers, Carl Vondrick, Kevin Murphy, and Cordelia Schmid.
+\newblock Videobert: A joint model for video and language representation learning.
+\newblock In {\em ICCV}, 2019.
+
+\bibitem{gao_question-guided_2018}
+Peng Gao, Hongsheng Li, Shuang Li, Pan Lu, Yikang Li, Steven~CH Hoi, and Xiaogang Wang.
+\newblock Question-guided hybrid convolution for visual question answering.
+\newblock In {\em ECCV}, 2018.
+
+\bibitem{zadeh2018multimodal}
+AmirAli~Bagher Zadeh, Paul~Pu Liang, Soujanya Poria, Erik Cambria, and Louis-Philippe Morency.
+\newblock Multimodal language analysis in the wild: Cmu-mosei dataset and interpretable dynamic fusion graph.
+\newblock In {\em ACL}, 2018.
+
+\bibitem{rahman2020integrating}
+Wasifur Rahman, Md~Kamrul Hasan, Sangwu Lee, Amir Zadeh, Chengfeng Mao, Louis-Philippe Morency, and Ehsan Hoque.
+\newblock Integrating multimodal information in large pretrained transformers.
+\newblock In {\em ACL}, 2020.
+
+\bibitem{cinar2017position}
+Yagmur~Gizem Cinar, Hamid Mirisaee, Parantapa Goswami, Eric Gaussier, Ali A{\"\i}t-Bachir, and Vadim Strijov.
+\newblock Position-based content attention for time series forecasting with sequence-to-sequence rnns.
+\newblock In {\em ICONIP}, 2017.
+
+\bibitem{fan2019multi}
+Chenyou Fan, Yuze Zhang, Yi~Pan, Xiaoyue Li, Chi Zhang, Rong Yuan, Di~Wu, Wensheng Wang, Jian Pei, and Heng Huang.
+\newblock Multi-horizon time series forecasting with temporal attention learning.
+\newblock In {\em KDD}, 2019.
+
+\bibitem{jin2021inter}
+Xiaoyong Jin, Yu-Xiang Wang, and Xifeng Yan.
+\newblock Inter-series attention model for covid-19 forecasting.
+\newblock In {\em SDM}, 2021.
+
+\bibitem{jiang_adaptive_2019}
+Xiaotian Jiang, Quan Wang, and Bin Wang.
+\newblock Adaptive convolution for multi-relational learning.
+\newblock In {\em NAACL}, 2019.
+
+\bibitem{song2019session}
+Weiping Song, Zhiping Xiao, Yifan Wang, Laurent Charlin, Ming Zhang, and Jian Tang.
+\newblock Session-based social recommendation via dynamic graph attention networks.
+\newblock In {\em WSDM}, 2019.
+
+\bibitem{song2019autoint}
+Weiping Song, Chence Shi, Zhiping Xiao, Zhijian Duan, Yewen Xu, Ming Zhang, and Jian Tang.
+\newblock Autoint: Automatic feature interaction learning via self-attentive neural networks.
+\newblock In {\em CIKM}, 2019.
+
+\bibitem{huang2020efficient}
+Zhenhua Huang, Xin Xu, Honghao Zhu, and MengChu Zhou.
+\newblock An efficient group recommendation model with multiattention-based neural networks.
+\newblock {\em IEEE TNNLS}, 2020.
+
+\bibitem{nikolentzos2020message}
+Giannis Nikolentzos, Antoine Tixier, and Michalis Vazirgiannis.
+\newblock Message passing attention networks for document understanding.
+\newblock In {\em AAAI}, 2020.
+
+\bibitem{choi2020improving}
+Gihyeon Choi, Shinhyeok Oh, and Harksoo Kim.
+\newblock Improving document-level sentiment classification using importance of sentences.
+\newblock {\em Entropy}, 2020.
+
+\bibitem{zhang2020text}
+Haopeng Zhang and Jiawei Zhang.
+\newblock Text graph transformer for document classification.
+\newblock In {\em EMNLP}, 2020.
+
+\bibitem{kim_laf-net_2019}
+Sunok Kim, Seungryong Kim, Dongbo Min, and Kwanghoon Sohn.
+\newblock Laf-net: {Locally} adaptive fusion networks for stereo confidence estimation.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{gumbel1954statistical}
+Emil~Julius Gumbel.
+\newblock Statistical theory of extreme values and some practical applications.
+\newblock {\em NBS Applied Mathematics Series}, 1954.
+
+\bibitem{jang2016categorical}
+Eric Jang, Shixiang Gu, and Ben Poole.
+\newblock Categorical reparameterization with gumbel-softmax.
+\newblock In {\em ICLR}, 2017.
+
+\bibitem{kaiser2018discrete}
+{\L}ukasz Kaiser and Samy Bengio.
+\newblock Discrete autoencoders for sequence models.
+\newblock {\em arXiv preprint arXiv:1801.09797}, 2018.
+
+\bibitem{tavarone_conditional-computation-based_2018}
+Raffaele Tavarone and Leonardo Badino.
+\newblock Conditional-{Computation}-{Based} {Recurrent} {Neural} {Networks} for {Computationally} {Efficient} {Acoustic} {Modelling}.
+\newblock In {\em Interspeech}, 2018.
+
+\bibitem{tran2015learning}
+Du~Tran, Lubomir Bourdev, Rob Fergus, Lorenzo Torresani, and Manohar Paluri.
+\newblock Learning spatiotemporal features with 3d convolutional networks.
+\newblock In {\em ICCV}, 2015.
+
+\bibitem{carreira2017quo}
+Joao Carreira and Andrew Zisserman.
+\newblock Quo vadis, action recognition? a new model and the kinetics dataset.
+\newblock In {\em CVPR}, 2017.
+
+\bibitem{he2019stnet}
+Dongliang He, Zhichao Zhou, Chuang Gan, Fu~Li, Xiao Liu, Yandong Li, Limin Wang, and Shilei Wen.
+\newblock Stnet: Local and global spatial-temporal modeling for action recognition.
+\newblock In {\em AAAI}, 2019.
+
+\bibitem{kaya_shallow-deep_2019}
+Yigitcan Kaya, Sanghyun Hong, and Tudor Dumitras.
+\newblock Shallow-deep networks: {Understanding} and mitigating network overthinking.
+\newblock In {\em ICML}, 2019.
+
+\bibitem{duggal_elf_2020}
+Rahul Duggal, Scott Freitas, Sunny Dhamnani, Duen Horng, Jimeng Sun, et~al.
+\newblock Elf: An early-exiting framework for long-tailed classification.
+\newblock {\em arXiv preprint arXiv:2006.11979}, 2020.
+
+\bibitem{hu_triple_2020}
+Ting-Kuei Hu, Tianlong Chen, Haotao Wang, and Zhangyang Wang.
+\newblock Triple {Wins}: {Boosting} {Accuracy}, {Robustness} and {Efficiency} {Together} by {Enabling} {Input}-{Adaptive} {Inference}.
+\newblock In {\em ICLR}, 2020.
+
+\bibitem{rosenbaum_routing_2018}
+Clemens Rosenbaum, Tim Klinger, and Matthew Riemer.
+\newblock Routing networks: Adaptive selection of non-linear functions for multi-task learning.
+\newblock In {\em ICLR}, 2018.
+
+\bibitem{Guo_2019_CVPR_spottune}
+Yunhui Guo, Honghui Shi, Abhishek Kumar, Kristen Grauman, Tajana Rosing, and Rogerio Feris.
+\newblock Spottune: Transfer learning through adaptive fine-tuning.
+\newblock In {\em CVPR}, 2019.
+
+\bibitem{wang2021images}
+Yulin Wang, Rui Huang, Shiji Song, Zeyi Huang, and Gao Huang.
+\newblock Not all images are worth 16x16 words: Dynamic vision transformers with adaptive sequence length, 2021.
+
+\bibitem{rao2021dynamicvit}
+Yongming Rao, Wenliang Zhao, Benlin Liu, Jiwen Lu, Jie Zhou, and Cho-Jui Hsieh.
+\newblock Dynamicvit: Efficient vision transformers with dynamic token sparsification.
+\newblock {\em arXiv preprint arXiv:2106.02034}, 2021.
+
+\bibitem{pan2021ia}
+Bowen Pan, Yifan Jiang, Rameswar Panda, Zhangyang Wang, Rogerio Feris, and Aude Oliva.
+\newblock Ia-red \^{} 2: Interpretability-aware redundancy reduction for vision transformers.
+\newblock {\em arXiv preprint arXiv:2106.12620}, 2021.
+
+\bibitem{yang2019synetgy}
+Yifan Yang, Qijing Huang, Bichen Wu, Tianjun Zhang, Liang Ma, Giulio Gambardella, Michaela Blott, Luciano Lavagno, Kees Vissers, John Wawrzynek, et~al.
+\newblock Synetgy: Algorithm-hardware co-design for convnet accelerators on embedded fpgas.
+\newblock In {\em FPGA}, 2019.
+
+\bibitem{albericio_cnvlutin_2016}
+Jorge Albericio, Patrick Judd, Tayler Hetherington, Tor Aamodt, Natalie~Enright Jerger, and Andreas Moshovos.
+\newblock Cnvlutin: {Ineffectual}-{Neuron}-{Free} {Deep} {Neural} {Network} {Computing}.
+\newblock In {\em ISCA}, 2016.
+
+\bibitem{lin2017predictivenet}
+Yingyan Lin, Charbel Sakr, Yongjune Kim, and Naresh Shanbhag.
+\newblock Predictivenet: An energy-efficient convolutional neural network via zero prediction.
+\newblock In {\em ISCAS}, 2017.
+
+\bibitem{akhlaghi2018snapea}
+Vahideh Akhlaghi, Amir Yazdanbakhsh, Kambiz Samadi, Rajesh~K Gupta, and Hadi Esmaeilzadeh.
+\newblock Snapea: Predictive early activation for reducing computation in deep convolutional neural networks.
+\newblock In {\em ISCA}, 2018.
+
+\bibitem{hua2019boosting}
+Weizhe Hua, Yuan Zhou, Christopher De~Sa, Zhiru Zhang, and G~Edward Suh.
+\newblock Boosting the performance of cnn accelerators with dynamic fine-grained channel gating.
+\newblock In {\em MICRO}, 2019.
+
+\bibitem{paul2019hardware}
+Debdeep Paul, Jawar Singh, and Jimson Mathew.
+\newblock Hardware-software co-design approach for deep learning inference.
+\newblock In {\em ICSCC}, 2019.
+
+\bibitem{haque2020ilfo}
+Mirazul Haque, Anki Chauhan, Cong Liu, and Wei Yang.
+\newblock Ilfo: Adversarial attack on adaptive neural networks.
+\newblock In {\em CVPR}, 2020.
+
+\bibitem{hong2020panda}
+Sanghyun Hong, Yi{\u{g}}itcan Kaya, Ionu{\c{t}}-Vlad Modoranu, and Tudor Dumitra{\c{s}}.
+\newblock A panda? no, it's a sloth: Slowdown attacks on adaptive multi-exit neural network inference.
+\newblock In {\em ICLR}, 2021.
+
+\end{thebibliography}
