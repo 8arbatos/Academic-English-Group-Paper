@@ -35,6 +35,16 @@ Jonathan~T Barron, Ben Mildenhall, Matthew Tancik, Peter Hedman, Ricardo Martin-
 \newblock Mip-nerf: A multiscale representation for anti-aliasing neural radiance fields.
 \newblock In {\em Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)}, pages 5855--5864, 2021.
 
+\bibitem{mipnerf360}
+Jonathan~T Barron et~al.
+\newblock Mip-nerf 360: Unbounded anti-aliased neural radiance fields.
+\newblock In {\em CVPR}, 2022.
+
+\bibitem{refnerf}
+Dor Verbin et~al.
+\newblock Ref-nerf: Structured view-dependent appearance for neural radiance fields.
+\newblock In {\em CVPR}, 2022.
+
 \bibitem{dnerf}
 Albert Pumarola, Enric Corona, Gerard Pons-Moll, and Francesc Moreno-Noguer.
 \newblock D-nerf: Neural radiance fields for dynamic scenes.
@@ -44,6 +54,26 @@ Albert Pumarola, Enric Corona, Gerard Pons-Moll, and Francesc Moreno-Noguer.
 Keunhong Park, Utkarsh Sinha, Jonathan~T Barron, Sofien Bouaziz, Dan~B Goldman, Steven~M Seitz, and Ricardo Martin-Brualla.
 \newblock Nerfies: Deformable neural radiance fields.
 \newblock {\em arXiv preprint arXiv:2011.12948}, 2021.
+
+\bibitem{dvgo}
+Cheng Sun, Min Sun, and Hwann-Tzong Chen.
+\newblock Direct voxel grid optimization: Super-fast convergence for radiance fields reconstruction.
+\newblock In {\em CVPR}, 2022.
+
+\bibitem{plenoxels}
+Alex Yu, Sara Fridovich-Keil, Matthew Tancik, Qinhong Chen, Benjamin Recht, and Angjoo Kanazawa.
+\newblock Plenoxels: Radiance fields without neural networks.
+\newblock {\em arXiv preprint arXiv:2112.05131}, 2021.
+
+\bibitem{neus}
+Peng Wang et~al.
+\newblock Neus: Learning neural implicit surfaces by volume rendering for multi-view reconstruction.
+\newblock In {\em NeurIPS}, 2021.
+
+\bibitem{volsdf}
+Lior Yariv et~al.
+\newblock Volsdf: Volume rendering of neural implicit surfaces.
+\newblock In {\em NeurIPS}, 2021.
 
 \bibitem{gaussian_splatting}
 Bernhard Kerbl, Georgios Wang, Fabrice Rousselle, and Vladlen Koltun.
@@ -59,6 +89,16 @@ Guanjun Wu, Taoran Yi, Jiemin Fang, Lingxi Xie, Xiaopeng Zhang, Wei Wei, Wenyu L
 Jonathon Luiten, Georgios Kopanas, Bastian Leibe, and Deva Ramanan.
 \newblock Dynamic 3d gaussians: Tracking by persistent dynamic view synthesis.
 \newblock {\em arXiv preprint arXiv:2308.09713}, 2023.
+
+\bibitem{nr_nerf}
+Edgar Tretschk et~al.
+\newblock Non-rigid neural radiance fields: Reconstruction and novel view synthesis of a dynamic scene from monocular video.
+\newblock In {\em ICCV}, 2021.
+
+\bibitem{hyperreel}
+Benjamin Attal et~al.
+\newblock Hyperreel: High-fidelity 6-dof video with ray-conditioned sampling.
+\newblock In {\em CVPR}, 2023.
 
 \bibitem{hypernerf}
 Keunhong Park, Utkarsh Sinha, Peter Hedman, Jonathan~T Barron, Sofien Bouaziz, Dan~B Goldman, Ricardo Martin-Brualla, and Steven~M Seitz.
@@ -100,6 +140,91 @@ Ziyi Yang, Xinyu Gao, Wen Zhou, Shaohui Jiao, Yuqing Zhang, and Xiaogang Jin.
 \newblock Deformable 3d gaussians for high-fidelity monocular dynamic scene reconstruction.
 \newblock {\em arXiv preprint arXiv:2309.13101}, 2023.
 
+\bibitem{gauhuman}
+Shoukang Hu and Yukara Kasai.
+\newblock Gauhuman: Articulated gaussian splatting from monocular human videos.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{hugs}
+Muhammed~Kocabas Jiang et~al.
+\newblock Hugs: Human gaussian splatting.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{gaussianavatar}
+Shenhan Qian et~al.
+\newblock Gaussianavatar: Towards realistic human avatar modeling from monocular video using drivable 3d gaussians.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{gps_gaussian}
+Shunyao Zheng et~al.
+\newblock Gps-gaussian: Generalizable pixel-wise 3d gaussian splatting for real-time human novel view synthesis.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{nerface}
+Guy Gafni et~al.
+\newblock Nerface: Dynamic neural radiance fields for monocular face avatar reconstruction.
+\newblock In {\em CVPR}, 2021.
+
+\bibitem{flash_avatar}
+Jun Xiang et~al.
+\newblock Flashavatar: High-fidelity head avatar with efficient gaussian embedding.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{insta_avatar}
+Yuxiao Zhang et~al.
+\newblock Instaavatar: One-shot avatar from a single image.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{monogaussianavatar}
+Yufan Chen et~al.
+\newblock Monogaussianavatar: Monocular gaussian point-based head avatar.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{physgaussian}
+Tianyi Xie et~al.
+\newblock Physgaussian: Physics-integrated 3d gaussians for generative dynamics.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{gaussian_flow}
+Youtian Lin et~al.
+\newblock Gaussian-flow: 4d reconstruction with dynamic 3d gaussian splatting.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{cogs}
+Heng Yu et~al.
+\newblock Cogs: Controllable gaussian splatting.
+\newblock {\em CVPR}, 2024.
+
+\bibitem{sc_gs}
+Yi-Hua Huang et~al.
+\newblock Sc-gs: Sparse-controlled gaussian splatting for editable dynamic scenes.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{spacetime_gaussian}
+Zhan Li et~al.
+\newblock Spacetime gaussian feature splatting for real-time dynamic view synthesis.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{mip_splatting}
+Zehao Yu et~al.
+\newblock Mip-splatting: Alias-free 3d gaussian splatting.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{scaffold_gs}
+Tao Lu et~al.
+\newblock Scaffold-gs: Structured 3d gaussians for view-adaptive rendering.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{gs_slam}
+Chi Yan et~al.
+\newblock Gs-slam: Dense visual slam with 3d gaussian splatting.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{splat_slam}
+Nikhil Keetha et~al.
+\newblock Splat-slam: Globally consistent dense slam with 3d gaussians.
+\newblock In {\em CVPR}, 2024.
+
 \bibitem{instant_ngp}
 Thomas Müller, Alex Evans, Christoph Schied, and Alexander Keller.
 \newblock Instant neural graphics primitives with a multiresolution hash encoding.
@@ -115,15 +240,30 @@ Sara Fridovich-Keil, Giacomo Meanti, Frederik Warburg, Benjamin Recht, and Angjo
 \newblock K-planes: Explicit radiance fields in space, time, and appearance.
 \newblock {\em arXiv preprint arXiv:2301.10241}, 2023.
 
-\bibitem{plenoxels}
-Alex Yu, Sara Fridovich-Keil, Matthew Tancik, Qinhong Chen, Benjamin Recht, and Angjoo Kanazawa.
-\newblock Plenoxels: Radiance fields without neural networks.
-\newblock {\em arXiv preprint arXiv:2112.05131}, 2021.
+\bibitem{tensor4d}
+Ruixiang Shao et~al.
+\newblock Tensor4d: Efficient neural 4d decomposition for high-fidelity dynamic reconstruction and rendering.
+\newblock In {\em CVPR}, 2023.
+
+\bibitem{streamrf}
+Lingzhi Li et~al.
+\newblock Streamrf: Streaming radiance fields for real-time photorealistic rendering of dynamic scenes.
+\newblock In {\em ICCV}, 2023.
 
 \bibitem{point_nerf}
 Qiangeng Xu, Zexiang Xu, Julien Philip, Sai Bi, Zhixin Shu, Kalyan Sunkavalli, and Ulrich Neumann.
 \newblock Point-nerf: Point-based neural radiance fields.
 \newblock {\em arXiv preprint arXiv:2201.08845}, 2022.
+
+\bibitem{zipnerf}
+Jonathan~T Barron et~al.
+\newblock Zip-nerf: Anti-aliased grid-based neural radiance fields.
+\newblock In {\em ICCV}, 2023.
+
+\bibitem{rodynrf}
+Yu-Lun Liu et~al.
+\newblock Rodynrf: Robust dynamic neural radiance fields.
+\newblock In {\em CVPR}, 2023.
 
 \bibitem{tineuvox}
 Jiemin Fang, Taoran Yi, Xinggang Wang, Lingxi Xie, Xiaopeng Zhang, Wenyu Liu, Matthias Nießner, and Qi~Tian.
@@ -134,5 +274,50 @@ Jiemin Fang, Taoran Yi, Xinggang Wang, Lingxi Xie, Xiaopeng Zhang, Wenyu Liu, Ma
 Ang Cao and Justin Johnson.
 \newblock Hexplane: A fast representation for dynamic scenes.
 \newblock {\em arXiv preprint arXiv:2301.09632}, 2023.
+
+\bibitem{c3dgs}
+Joo~Chan Lee et~al.
+\newblock Compact 3d gaussian representation for radiance field.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{eagles}
+Sharath Girish et~al.
+\newblock Eagles: Efficient accelerated 3d gaussians with lightweight encodings.
+\newblock {\em arXiv preprint arXiv:2312.04564}, 2023.
+
+\bibitem{dreamfusion}
+Ben Poole et~al.
+\newblock Dreamfusion: Text-to-3d using 2d diffusion.
+\newblock In {\em ICLR}, 2023.
+
+\bibitem{dreamgaussian}
+Jiaxiang Tang et~al.
+\newblock Dreamgaussian: Generative gaussian splatting for efficient 3d content creation.
+\newblock In {\em ICLR}, 2024.
+
+\bibitem{lgm}
+Jiaxiang Tang et~al.
+\newblock Lgm: Large multi-view gaussian model for high-resolution 3d content creation.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{mav3d}
+Uriel Singer et~al.
+\newblock Mav3d: Make-a-video3d for dynamic 3d scene generation.
+\newblock In {\em ICLR}, 2023.
+
+\bibitem{align_your_gaussians}
+Huan Ling et~al.
+\newblock Align your gaussians: Text-to-4d with dynamic 3d gaussians and video diffusion models.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{animate124}
+Yuyang Zhao et~al.
+\newblock Animate124: Animating one image to 4d dynamic scene.
+\newblock In {\em CVPR}, 2024.
+
+\bibitem{sugar}
+Antoine Guédon and Vincent Lepetit.
+\newblock Sugar: Surface-aligned gaussian splatting for efficient 3d mesh reconstruction and high-quality mesh rendering.
+\newblock In {\em CVPR}, 2024.
 
 \end{thebibliography}

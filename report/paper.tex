@@ -62,7 +62,7 @@
     Dynamic scene modeling is a pivotal technology for emerging applications in the Metaverse, virtual reality, and free-viewpoint video. While Neural Radiance Fields (NeRF) have achieved photorealistic rendering, their application to dynamic scenes is hindered by slow training and inference speeds. Recently, 3D Gaussian Splatting (3DGS) has emerged as a disruptive alternative, offering real-time rendering capabilities through explicit splatting. 
     In this survey, we provide a comprehensive review of the transition from implicit to explicit representations for dynamic scene modeling. We propose a structured taxonomy categorizing existing methods into four paradigms: Implicit Deformation Fields, Spacetime Neural Fields, Hybrid Representations, and Dynamic Gaussian Splatting. 
     Furthermore, we conduct a systematic comparative analysis based on reconstruction quality, training efficiency, and storage footprint. Our analysis reveals that while implicit methods excel in storage efficiency ($<5$ MB), explicit Gaussian-based methods demonstrate superior real-time performance ($>80$ FPS). 
-    Finally, we discuss open challenges, including storage compression and integration with generative AI, outlining future directions for this rapidly evolving field.
+    Finally, we discuss open challenges, including storage compression and integration with generative AI. We believe this survey serves as a timely roadmap for researchers navigating the rapid paradigm shift from implicit fields to explicit primitives in 4D vision.
     Our compiled resources are available at \url{https://github.com/8arbatos/Academic-English-Group-Paper}.
   \end{abstract}
 
@@ -101,9 +101,9 @@ They often struggled to produce photorealistic textures or handle large topologi
 %----------------------------------------------------------------------------------------
 The field witnessed a paradigm shift with the introduction of \textbf{Neural Radiance Fields (NeRF)} \cite{nerf}. 
 By representing scenes as implicit continuous functions parameterized by Multi-Layer Perceptrons (MLPs), NeRF achieved unprecedented rendering quality. 
-Following the original NeRF, foundational extensions were quickly proposed to enhance robustness: \textbf{NeRF++} \cite{nerfpp} introduced inverted sphere parameterization to model unbounded scenes, while \textbf{Mip-NeRF} \cite{mipnerf} employed conical frustums to address aliasing artifacts. 
+Following the original NeRF, foundational extensions were quickly proposed to enhance robustness: \textbf{NeRF++} \cite{nerfpp} introduced inverted sphere parameterization to model unbounded scenes, and \textbf{Mip-NeRF} \cite{mipnerf} employed conical frustums to address aliasing artifacts, which was further refined by \textbf{Mip-NeRF 360} \cite{mipnerf360} for large-scale environments. 
+Additionally, \textbf{Ref-NeRF} \cite{refnerf} significantly improved the rendering of glossy surfaces by restructuring the view-dependent parameterization.
 Building on these static foundations, subsequent works such as D-NeRF \cite{dnerf} and Nerfies \cite{nerfies} extended the implicit paradigm to dynamic domains by introducing learnable deformation fields to handle non-rigid motion. 
-However, implicit methods suffer from prohibitive computational costs due to the extensive ray-marching sampling required during both training and inference, limiting their deployment in real-time applications.
 
 %----------------------------------------------------------------------------------------
 \begin{figure*}[!t]
@@ -114,6 +114,10 @@ However, implicit methods suffer from prohibitive computational costs due to the
   This trajectory highlights the community's move from continuous MLP-based functions to discrete, rasterizable primitives to achieve real-time rendering capabilities.}
   \label{fig:evolution_3d_reconstruction}
 \end{figure*}
+
+%----------------------------------------------------------------------------------------
+However, implicit methods suffer from prohibitive computational costs due to the extensive ray-marching sampling required during both training and inference, limiting their deployment in real-time applications.
+Prior to 3DGS, methods like \textbf{DVGO} \cite{dvgo} and \textbf{Plenoxels} \cite{plenoxels} attempted to accelerate training using explicit voxel grids, while \textbf{NeuS} \cite{neus} and \textbf{VolSDF} \cite{volsdf} focused on improving geometric fidelity using Signed Distance Functions (SDF).
 
 %----------------------------------------------------------------------------------------
 Recently, \textbf{3D Gaussian Splatting (3DGS)} \cite{gaussian_splatting} has emerged as a compelling alternative, marking a return to explicit volumetric representations. 
@@ -262,6 +266,7 @@ The evolution of implicit deformation fields can be traced through general-purpo
 Pumarola et al. established the baseline with \textbf{D-NeRF}, introducing the translation field $\mathbf{x}(t) \to \mathbf{x}_{canon} + \Delta \mathbf{x}$. 
 It optimizes the scene using a sparse set of monocular images, successfully reconstructing objects like a moving mechanical arm or a jumping human \cite{dnerf}.
 Addressing the challenges of casual selfie videos (e.g., camera movement), Park et al. introduced \textbf{Nerfies}, which employs learned latent deformation codes $\omega_i$ and \textbf{elastic regularization} to impose rigidity priors, preventing unrealistic distortions in background regions \cite{nerfies}.
+Furthermore, \textbf{NR-NeRF} \cite{nr_nerf} demonstrated robust non-rigid reconstruction from monocular video. To handle high-resolution dynamics efficiently, \textbf{HyperReel} \cite{hyperreel} introduced a memory-efficient 6-DoF tensor representation, significantly improving rendering speed compared to pure MLP-based deformations.
 
 \textbf{Handling Topological Changes:}
 A critical limitation of continuous deformation fields is their inability to model topological changes (e.g., a mouth opening). 
@@ -359,6 +364,21 @@ In the following, we discuss two representative frameworks that implement these 
 \textbf{4D-GS:} Wu et al. introduced a holistic representation combining 3D Gaussians with 4D neural voxels. To solve the memory bottleneck, they utilize a \textbf{HexPlane} structure to encode spatial-temporal features. A lightweight multi-head decoder then predicts the Gaussian deformations from these features. This design enables real-time rendering (e.g., 82 FPS at $800 \times 800$ resolution) while maintaining compact storage comparable to static methods \cite{4dgs}.
 
 %----------------------------------------------------------------------------------------
+\subsubsection{Specialized and Robust Dynamic Gaussians} 
+Beyond general scenes, significant efforts have been directed towards human-centric reconstruction. 
+\textbf{GauHuman} \cite{gauhuman} and \textbf{HUGS} \cite{hugs} integrate SMPL priors into the 3DGS pipeline to achieve real-time rendering of articulated humans (60+ FPS). 
+\textbf{GaussianAvatar} \cite{gaussianavatar} further enables drivable avatars from monocular video, while \textbf{GPS-Gaussian} \cite{gps_gaussian} introduces a generalizable pixel-wise splatting approach for robust human synthesis.
+
+Specific to head avatars, \textbf{NerFace} \cite{nerface} pioneered dynamic facial modeling with NeRFs. Recent Gaussian-based works like \textbf{FlashAvatar} \cite{flash_avatar}, \textbf{InstaAvatar} \cite{insta_avatar}, and \textbf{MonoGaussianAvatar} \cite{monogaussianavatar} achieve high-fidelity head reconstruction with extreme efficiency.
+
+To enhance physical plausibility and controllability, \textbf{PhysGaussian} \cite{physgaussian} incorporates unified simulation and rendering, allowing 3D Gaussians to respond to physical forces. 
+\textbf{Gaussian-Flow} \cite{gaussian_flow} and \textbf{CoGS} \cite{cogs} explicitly model scene flow and controllability to address the limitations of purely deformation-based approaches. 
+Furthermore, \textbf{SC-GS} \cite{sc_gs} utilizes sparse control points for editable dynamics, while \textbf{Spacetime Gaussian} \cite{spacetime_gaussian} employs feature splatting to enhance temporal consistency.
+
+Finally, addressing the sampling artifacts in multi-scale rendering, \textbf{Mip-Splatting} \cite{mip_splatting} introduces 3D smoothing filters to enable alias-free rendering. To improve geometric stability, \textbf{Scaffold-GS} \cite{scaffold_gs} utilizes anchor points to guide the distribution of Gaussians.
+In the domain of robotics, 3DGS has been successfully adapted for Simultaneous Localization and Mapping (SLAM). Systems like \textbf{GS-SLAM} \cite{gs_slam} and \textbf{Splat-SLAM} \cite{splat_slam} demonstrate that dynamic Gaussians can serve as a unified representation for both tracking and mapping.
+
+%----------------------------------------------------------------------------------------
 \subsubsection{Summary}
 
 \textbf{Pros:} These methods inherit the efficiency of the rasterization pipeline, achieving real-time rendering speeds ($>30$ FPS) and fast training convergence (often within minutes), which addresses the primary limitation of implicit NeRFs \cite{4dgs}.
@@ -393,6 +413,8 @@ Although originally static, its hash encoding backbone has become the standard c
 TensoRF factorizes the 3D scene tensor into vector-matrix outer products. 
 Extending this to dynamic scenes, \textbf{K-Planes} decomposes the 4D spatiotemporal volume into six planar planes (e.g., $xy, xt, yt$). 
 This decomposition allows for explicit modeling of time while maintaining a low memory footprint, effectively ``unrolling'' the complex dynamic scene into manageable 2D feature maps \cite{tensorf, kplanes}.
+Similarly, \textbf{Tensor4D} \cite{tensor4d} employs tensor decomposition to model 4D dynamics efficiently. 
+For streaming applications, \textbf{StreamRF} \cite{streamrf} proposes a transformation-aware approach to handle long dynamic video sequences with on-the-fly training.
 
 \textbf{Plenoxels:} Taking the ``hybrid'' concept to its limit, Fridovich-Keil et al. proposed \textit{Plenoxels}, which eliminates the neural network entirely. 
 It optimizes a sparse voxel grid where each voxel stores spherical harmonics coefficients directly. 
@@ -403,6 +425,10 @@ Xu et al. proposed \textit{Point-NeRF}, which combines accurate 3D point clouds 
 Instead of querying a dense grid, Point-NeRF stores neural features on discrete points. 
 During ray-marching, features are aggregated from nearby points to predict radiance. 
 This approach effectively skips empty space and serves as a significant precursor to 3DGS, demonstrating the potential of point-based neural rendering \cite{point_nerf}.
+
+\textbf{Advanced Optimization:} 
+To address aliasing artifacts in grid-based methods, \textbf{Zip-NeRF} \cite{zipnerf} combines the speed of grids with the anti-aliasing properties of multi-sampling, setting a new benchmark for static quality. 
+For dynamic robustness, \textbf{RoDynRF} \cite{rodynrf} introduces robust loss functions to handle occlusions and outliers in monocular video, significantly improving stability in uncontrolled environments.
 
 %----------------------------------------------------------------------------------------
 \subsubsection{Summary}
@@ -586,6 +612,12 @@ Modeling rapid motion from monocular or sparse video remains a significant chall
 Naive temporal extensions (e.g., NeRF-T) often fail to disentangle geometry from motion blur, leading to ``ghosting'' artifacts where multiple timestamps appear overlaid. 
 As shown in the \textbf{bottom right} of Figure \ref{fig:qualitative_comparison}, methods utilizing compact latent codes (like \textbf{DyNeRF}) demonstrate better temporal consistency, effectively reconstructing sharp appearances even in the presence of fast-moving elements like flames or fluids \cite{dynerf}.
 
+\subsubsection{Artifact Analysis}
+While 3DGS excels in rendering speed, it is prone to specific artifacts not typically seen in NeRFs. 
+Due to the discrete nature of primitives, ``floaters'' (randomly placed opaque Gaussians) often appear in near-camera regions. 
+Furthermore, in areas with sparse observations, optimization can lead to ``needle-like'' elongated Gaussians, which degrade visual quality when viewed from novel angles. 
+Recent regularization techniques \cite{scaffold_gs, mip_splatting} attempt to mitigate these issues, but they remain an open problem for unconstrained dynamic scenes.
+
 %----------------------------------------------------------------------------------------
 \subsection{Efficiency Analysis}
 Beyond visual fidelity, the practical deployment of dynamic scene modeling hinges on computational efficiency. 
@@ -637,8 +669,9 @@ While explicit methods like 3DGS achieve real-time rendering, they suffer from a
 For instance, a naive dynamic 3DGS implementation can consume gigabytes of storage for a short sequence, as it may spawn millions of primitives. 
 Although methods like \textbf{4D-GS} utilize HexPlane decomposition to reduce this to $\sim 18$ MB, this is still orders of magnitude larger than standard 2D video codecs (e.g., H.264/HEVC).
 \begin{itemize}
-    \item \textbf{Challenge:} Developing standard compression algorithms for 4D primitives.
-    \item \textbf{Future Direction:} Future work may explore \textbf{Vector Quantization (VQ)} or \textbf{Codebook-based learning} to compress Gaussian attributes (color, rotation, covariance) into discrete indices. Additionally, distinct ``Level of Detail'' (LOD) strategies could be developed to stream dynamic 3D content efficiently over limited bandwidth networks, similar to adaptive bitrate streaming for 2D video.
+  \item \textbf{Challenge:} Developing standard compression algorithms for 4D primitives.
+  \item \textbf{Future Direction:} Future work focuses on vector quantization and codebook-based learning. Recent attempts like \textbf{Compact3D} \cite{c3dgs} and \textbf{EAGLES} \cite{eagles} have successfully reduced the storage of Gaussian fields by over $10\times$ without significant quality loss through quantized attribute encoding. 
+  Additionally, distinct ``Level of Detail'' (LOD) strategies could be developed to stream dynamic 3D content efficiently over limited bandwidth networks. Furthermore, optimizing the rasterization pipeline for \textbf{WebGPU and Mobile Hardware} is crucial. Enabling high-fidelity 4D rendering on edge devices (VR headsets, smartphones) will be the key to mass adoption in the Metaverse.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -656,11 +689,14 @@ The rapid rise of video generation models (e.g., \textbf{Sora}, \textbf{Veo}) ha
 \begin{itemize}
     \item \textbf{Challenge:} Bridging the gap between 2D generative priors and 3D/4D reconstruction pipelines.
 
-    \item \textbf{Future Direction:} Dynamic Scene Modeling serves as the ideal ``3D lifting'' mechanism for generative AI. 
+    \item \textbf{Future Direction:} Dynamic Scene Modeling serves as the ideal ``3D lifting'' mechanism for generative AI. Pioneering works like \textbf{DreamFusion} \cite{dreamfusion} utilized SDS loss for NeRF generation. 
+    Recently, \textbf{DreamGaussian} \cite{dreamgaussian} adapted this to explicit splatting for minute-level generation. \textbf{LGM} \cite{lgm} further demonstrates the potential of training large-scale transformers to directly predict 3D Gaussians from single images.
 
-        \textbf{Text-to-4D:} Combining text-to-video models with Dynamic 3DGS to generate 4D assets directly from prompts. The explicit nature of Gaussians makes them easier to manipulate than implicit NeRFs.
+      \textbf{Text-to-4D:} Combining text-to-video models with Dynamic 3DGS to generate 4D assets directly from prompts. 
+      Seminal works like \textbf{MAV3D} \cite{mav3d} pioneered this direction using NeRFs. 
+      More recently, \textbf{Align Your Gaussians} \cite{align_your_gaussians} and \textbf{Animate124} \cite{animate124} leverage the explicit nature of Gaussians to animate static objects or generate 4D scenes from single images with higher fidelity and speed.
 
-        \textbf{4D Editing:} Using generative diffusion models to stylize or edit reconstructed 4D scenes (e.g., changing the weather in a captured dynamic video) while maintaining temporal consistency.
+      \textbf{4D Editing:} Using generative diffusion models to stylize or edit reconstructed 4D scenes (e.g., changing the weather in a captured dynamic video) while maintaining temporal consistency.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -669,7 +705,7 @@ A fundamental limitation of current SOTA methods (including DyNeRF and 3DGS) is 
 Existing frameworks typically model the final radiance color $c$ directly via Spherical Harmonics (SH) or latent codes, which entangles the object's surface material properties with the environmental lighting at the time of capture \cite{4dgs, dynerf}.
 \begin{itemize}
     \item \textbf{Challenge:} The inability to modify lighting conditions after training. Since shadows and reflections are ``frozen'' into the geometry or texture, moving these objects into a new virtual environment (e.g., in a game engine or Metaverse) results in visual inconsistencies.
-    \item \textbf{Future Direction:} The community is moving towards \textbf{Dynamic Inverse Rendering}. This involves decomposing the radiance field into physically based components: geometry, material (BRDF: albedo, roughness), and spatially-varying lighting. Integrating physics-based rendering (PBR) pipelines with dynamic 3DGS will be crucial for achieving editable, relightable 4D assets.
+    \item \textbf{Future Direction:} The community is moving towards \textbf{Dynamic Inverse Rendering}. This involves decomposing the radiance field into physically based components: geometry, material (BRDF: albedo, roughness), and spatially-varying lighting. Recent works like \textbf{SuGaR} \cite{sugar} have made strides in extracting explicit meshes from Gaussian clouds, which is a prerequisite for physical simulations and relighting. Integrating physics-based rendering (PBR) pipelines with dynamic 3DGS will be crucial for achieving editable, relightable 4D assets.
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -691,14 +727,6 @@ We believe that the convergence of explicit dynamic representations with generat
 % References
 %----------------------------------------------------------------------------------------
 \bibliography{reference}
-
-\newpage
-
-%----------------------------------------------------------------------------------------
-\section{Biography Section}
-\begin{IEEEbiographynophoto}{Yuwei ZHAO}
-Use $\backslash${\tt{begin\{IEEEbiographynophoto\}}} and the author name as the argument followed by the biography text.
-\end{IEEEbiographynophoto}
 
 %----------------------------------------------------------------------------------------
 \end{document}
